@@ -24,7 +24,7 @@ public class ReservationDetail {
 		private Reservation  reservation;
 
 	  @ManyToOne(fetch = FetchType.LAZY)
-			@JoinColumn(name = "idReservation", nullable = false)
+			@JoinColumn(name = "idProduct", nullable = false)
 			private Product  product;
 
 

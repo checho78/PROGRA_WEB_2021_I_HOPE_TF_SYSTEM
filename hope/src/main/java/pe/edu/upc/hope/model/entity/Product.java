@@ -25,10 +25,10 @@ public class Product {
 	@Column(name = "name", length = 30)
 	private String name;
 	
-	@Column(columnDefinition = "8,2")
-	private Float price;
+	@Column(name = "price")
+	private Double price;
 	
-	@Column(name = "description_id", length = 100)
+	@Column(name = "description", length = 100)
 	private String description;
 	
 
@@ -64,8 +64,8 @@ public class Product {
 
 
 
-		public Product(Integer idProduct, String name, Float price, String description, Brand brand, Category category,
-				Pharmacy pharmacy) {
+		public Product(Integer idProduct, String name, Double price, String description, Brand brand, Category category,
+				Pharmacy pharmacy, List<ReservationDetail> reservationDetails) {
 			super();
 			this.idProduct = idProduct;
 			this.name = name;
@@ -74,17 +74,6 @@ public class Product {
 			this.brand = brand;
 			this.category = category;
 			this.pharmacy = pharmacy;
-		}
-
-
-
-		public List<ReservationDetail> getReservationDetails() {
-			return reservationDetails;
-		}
-
-
-
-		public void setReservationDetails(List<ReservationDetail> reservationDetails) {
 			this.reservationDetails = reservationDetails;
 		}
 
@@ -114,13 +103,13 @@ public class Product {
 
 
 
-		public Float getPrice() {
+		public Double getPrice() {
 			return price;
 		}
 
 
 
-		public void setPrice(Float price) {
+		public void setPrice(Double price) {
 			this.price = price;
 		}
 
@@ -172,8 +161,20 @@ public class Product {
 			this.pharmacy = pharmacy;
 		}
 
-		
-	
+
+
+		public List<ReservationDetail> getReservationDetails() {
+			return reservationDetails;
+		}
+
+
+
+		public void setReservationDetails(List<ReservationDetail> reservationDetails) {
+			this.reservationDetails = reservationDetails;
+		}
+
+
+
 	
 	
 	
