@@ -38,20 +38,7 @@ public class CardController {
 		return "cards/list";
 	}
 	
-	@GetMapping("{id}")		// GET: /card/{id}
-	public String findById(Model model, @PathVariable("id") Integer id) {
-		try {
-			Optional<Card> optional = cardService.findById(id);
-			if (optional.isPresent()) {
-				model.addAttribute("card", optional.get());
-				return "cards/view";
-			}			
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.err.println(e.getMessage());
-		}
-		return "redirect:/cards";
-	}
+
 	//--------Edit -----------------------------
 	@GetMapping("{id}/edit")	// GET: /card/{id}/edit
 	public String editById(Model model, @PathVariable("id") Integer id) {
