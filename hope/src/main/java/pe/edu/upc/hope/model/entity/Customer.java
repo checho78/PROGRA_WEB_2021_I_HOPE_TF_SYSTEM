@@ -1,15 +1,22 @@
+
+
 package pe.edu.upc.hope.model.entity;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 
 @Entity
+@Table(name = "Customers")
 public class Customer {
-
-
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	@Column(name=  "idCustomer",nullable=false)
@@ -33,15 +40,38 @@ public class Customer {
 	@Column(name = "password", length = 20, nullable = false)
 	private String password;
 
-	
+	@OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
+	private List<Card> cards;
+
 	
 
-	//=========================
+	//========================= setters and getters and constructores de Customer
 	
+
+
+	
+	public Customer() {
+		cards  = new ArrayList<Card>();
+	}
+
+
+	public Customer(Integer idCustomer, String firstName, String lastName, String cellphone, String dni, String email,
+			String password) {
+		super();
+		this.idCustomer = idCustomer;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.cellphone = cellphone;
+		this.dni = dni;
+		this.email = email;
+		this.password = password;
+	
+	}
+
+
 	public Integer getIdCustomer() {
 		return idCustomer;
 	}
-
 	public void setIdCustomer(Integer idCustomer) {
 		this.idCustomer = idCustomer;
 	}
@@ -94,24 +124,14 @@ public class Customer {
 		this.password = password;
 	}
 
-	public Customer(Integer idCustomer, String firstName, String lastName, String cellphone, String dni, String email,
-			String password) {
-		super();
-		this.idCustomer = idCustomer;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.cellphone = cellphone;
-		this.dni = dni;
-		this.email = email;
-		this.password = password;
+	public List<Card> getCards() {
+		return cards;
 	}
 
-	public Customer() {
-		super();
-		// TODO Auto-generated constructor stub
+	public void setCards(List<Card> cards) {
+		this.cards = cards;
 	}
 
-	
 	
 	
 
