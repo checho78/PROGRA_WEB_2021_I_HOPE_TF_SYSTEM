@@ -21,7 +21,7 @@ public class Category{
 
 	public Category() {
 		super();
-		// TODO Auto-generated constructor stub
+	
 	}
 
 	public Category(Long idCategory, String name, List<Product> products) {
