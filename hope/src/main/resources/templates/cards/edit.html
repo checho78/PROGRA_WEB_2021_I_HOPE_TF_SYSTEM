@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head(~{::title})">
+	<title>HR - Cards edit </title>
+</head>
+ <body>
+ 	<header th:replace="layout/layout :: header"></header>
+   <h1>Editing Card Item</h1>
+
+<div class="card" style="width: 20rem;">
+  <div class="card-body">
+    
+    <form th:action="@{/cards/saveedit}" th:object="${cardEdit}" method="post">
+	 
+	  
+	  
+	   <div class="mb-3">
+		    <label for="name" class="form-label">Num Card</label>		    
+		    <input type="text" class="form-control" th:field="*{numCard}" aria-describedby="nameHelp">		    
+		    <div id="nameHelp" class="form-text">Register the numer  of the card.</div> 
+		  </div>
+		  
+		  
+		  
+		  <div class="mb-3">
+		    <label for="name" class="form-label">Expiration Date</label>		    
+		    <input type="number" class="form-control" th:field="*{expirationDate}" aria-describedby="nameHelp">		    
+		    <div id="nameHelp" class="form-text">Register the date of expiration </div> 
+		  </div>
+		  
+		  
+		  
+		  
+		  <div class="mb-3">
+		    <label for="name" class="form-label">CVV</label>		    
+		    <input type="text" class="form-control" th:field="*{cvv}" aria-describedby="nameHelp">		    
+		    <div id="nameHelp" class="form-text">Register the CVV.</div> 
+		  </div>
+		  
+	  <button type="submit" class="btn btn-success">Update</button>
+	</form>
+  </div>
+</div>
+	
+<a th:href="@{'/cards'}" class="btn btn-primary"><i class="fas fa-plus-square"></i> Return</a>
+
+   <script th:src="@{js/bootstrap.bundle.min.js}" ></script>
+ </body>
+</html>

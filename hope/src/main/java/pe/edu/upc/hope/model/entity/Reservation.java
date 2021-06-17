@@ -1,10 +1,15 @@
 package pe.edu.upc.hope.model.entity;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
 import javax.persistence.Table;
 
 @Entity
@@ -12,7 +17,7 @@ import javax.persistence.Table;
 public class Reservation {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private int idReservation;
 
 	@Column(name = "description", length = 50, nullable = false)
 	private String description;
@@ -29,14 +34,43 @@ public class Reservation {
 	@Column(name = "endDate", nullable = false)
 	private int endDate;
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "idCard", nullable = false)
+	private Card card;
+
+	//========================= setters and getters and constructores 
 	
-	//constructor y getters and  setter
-	public int getId() {
-		return id;
+	public Reservation() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	
+	
+	public Reservation(int idReservation, String description, String price, String commission, int startDate,
+			int endDate, Card card) {
+		super();
+		this.idReservation = idReservation;
+		this.description = description;
+		this.price = price;
+		this.commission = commission;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.card = card;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+
+
+
+	public int getIdReservation() {
+		return idReservation;
+	}
+
+
+
+	public void setIdReservation(int idReservation) {
+		this.idReservation = idReservation;
 	}
 
 	public String getDescription() {
@@ -79,20 +113,12 @@ public class Reservation {
 		this.endDate = endDate;
 	}
 
-	public Reservation() {
-		super();
-
+	public Card getCard() {
+		return card;
 	}
 
-	public Reservation(int id, String description, String price, String commission, int startDate, int endDate) {
-		super();
-		this.id = id;
-		this.description = description;
-		this.price = price;
-		this.commission = commission;
-		this.startDate = startDate;
-		this.endDate = endDate;
+	public void setCard(Card card) {
+		this.card = card;
 	}
-
 	
 }

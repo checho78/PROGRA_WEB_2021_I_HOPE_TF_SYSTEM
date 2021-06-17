@@ -2,6 +2,8 @@ package pe.edu.upc.hope.model.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -10,8 +12,8 @@ import java.util.List;
 public class Category{
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name="id",nullable=false)
-    private Long idCategory;
+    @Column(name="idCategory")
+    private Integer idCategory;
 
     @Column(name = "name", length = 10, nullable = false)
     private String name;
@@ -19,33 +21,51 @@ public class Category{
     @OneToMany(fetch = FetchType.LAZY,mappedBy = "category")
     private List<Product> products;
 
+    
+    //getters,setters y constructores
+    
+    
 	public Category() {
-		super();
-	
+		products  = new ArrayList<Product>();
 	}
 
-	public Category(Long idCategory, String name, List<Product> products) {
+
+	public Category(Integer idCategory, String name) {
 		super();
 		this.idCategory = idCategory;
 		this.name = name;
-		this.products = products;
 	}
 
-	public Long getIdCategory() {
+
+	public Integer getIdCategory() {
 		return idCategory;
 	}
 
-	public void setIdCategory(Long idCategory) {
+
+	public void setIdCategory(Integer idCategory) {
 		this.idCategory = idCategory;
 	}
+
 
 	public String getName() {
 		return name;
 	}
 
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
+
+	public List<Product> getProducts() {
+		return products;
+	}
+
+
+	public void setProducts(List<Product> products) {
+		this.products = products;
+	}
+
 
     
     

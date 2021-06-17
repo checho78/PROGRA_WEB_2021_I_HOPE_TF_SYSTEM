@@ -1,5 +1,6 @@
 package pe.edu.upc.hope.model.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -45,14 +46,16 @@ public class Pharmacy{
 
     @OneToMany(fetch = FetchType.LAZY,mappedBy = "pharmacy")
     private List<Product> products;
-
+   
+    //getters,setters y constructores
+    
+    
 	public Pharmacy() {
-		super();
-		// TODO Auto-generated constructor stub
+		products  = new ArrayList<Product>();
 	}
 
-	public Pharmacy(Integer idPharmacy, String name, String address, String district, String password, String description,
-			int startHour, int endHour, Long ruc, List<Product> products) {
+	public Pharmacy(Integer idPharmacy, String name, String address, String district, String password,
+			String description, int startHour, int endHour, Long ruc) {
 		super();
 		this.idPharmacy = idPharmacy;
 		this.name = name;
@@ -63,7 +66,7 @@ public class Pharmacy{
 		this.startHour = startHour;
 		this.endHour = endHour;
 		this.ruc = ruc;
-		this.products = products;
+	 
 	}
 
 	public Integer getIdPharmacy() {
@@ -137,6 +140,15 @@ public class Pharmacy{
 	public void setRuc(Long ruc) {
 		this.ruc = ruc;
 	}
-    
-    
+
+	public List<Product> getProducts() {
+		return products;
+	}
+
+	public void setProducts(List<Product> products) {
+		this.products = products;
+	}
+
+	
+   
 }

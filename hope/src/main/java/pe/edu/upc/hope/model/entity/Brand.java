@@ -1,65 +1,77 @@
 package pe.edu.upc.hope.model.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "Brands")
-
 public class Brand {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
 
+	 @Id
+	 @GeneratedValue(strategy= GenerationType.IDENTITY)
+	 @Column(name="idCategory")
+	    private Integer idCategory;
+	 
     @Column(name = "name", length = 30)
     private String name;
 
-	
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "brand")
+    private List<Product> products;
+
     
     //getters,setters y constructores
     
-    public Brand(Integer id, String name) {
-		super();
-		this.id = id;
-		this.name = name;
-	}
-
-
-
 	public Brand() {
+		products  = new ArrayList<Product>();
+	}
+
+    
+    
+	public Brand(Integer idCategory, String name, List<Product> products) {
 		super();
-		// TODO Auto-generated constructor stub
+		this.idCategory = idCategory;
+		this.name = name;
+		this.products = products;
 	}
 
 
 
-	public int getId() {
-		return id;
+	public Integer getIdCategory() {
+		return idCategory;
 	}
 
 
-
-	public void setId(Integer id) {
-		this.id = id;
+	public void setIdCategory(Integer idCategory) {
+		this.idCategory = idCategory;
 	}
-
-
 
 	public String getName() {
 		return name;
 	}
 
-
-
 	public void setName(String name) {
 		this.name = name;
 	}
-    
+
+	public List<Product> getProducts() {
+		return products;
+	}
+
+	public void setProducts(List<Product> products) {
+		this.products = products;
+	}
+	
+
 
   
 }

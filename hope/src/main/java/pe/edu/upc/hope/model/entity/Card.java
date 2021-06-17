@@ -1,5 +1,8 @@
 package pe.edu.upc.hope.model.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -8,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;   
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -29,6 +33,8 @@ public class Card {
     private String cvv;
     
  
+    @OneToMany(mappedBy = "card", fetch = FetchType.LAZY)
+	private List<Reservation> reservation;
 
     
     @ManyToOne(fetch = FetchType.LAZY)
@@ -36,7 +42,7 @@ public class Card {
 	private Customer  customer;
 
 
-	//========================= setters and getters and constructor de Card
+	//===== setters and getters and constructor 
 	
     
 	public Card(int idCard, String numCard, int expirationDate, String cvv, Customer customer) {
@@ -51,8 +57,7 @@ public class Card {
 
 
 	public Card() {
-		super();
-		// TODO Auto-generated constructor stub
+		reservation  = new ArrayList<Reservation>();
 	}
 
 
