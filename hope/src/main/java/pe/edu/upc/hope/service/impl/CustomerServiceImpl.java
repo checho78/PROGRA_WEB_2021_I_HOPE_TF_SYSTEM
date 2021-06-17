@@ -1,7 +1,5 @@
 package pe.edu.upc.hope.service.impl;
 
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -19,7 +17,5 @@ public class CustomerServiceImpl implements CustomerService {
 	public JpaRepository<Customer, Integer> getRepository() {
 		return customerRepository;
 	}
-
-	
 
 }

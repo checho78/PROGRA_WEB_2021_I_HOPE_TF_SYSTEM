@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import pe.edu.upc.hope.model.entity.Brand;
 import pe.edu.upc.hope.model.repository.BrandRepository;
 import pe.edu.upc.hope.service.BrandService;
-// CAMBIAR PANDEMIA POR EL NOMBRE DEL PROYECTO
+
 
 
 @Service
@@ -18,7 +18,7 @@ public class BrandServiceImpl implements BrandService{
 	
 	@Override
 	public JpaRepository<Brand, Integer> getRepository() {
-		// TODO Auto-generated method stub
+	
 		return brandRepository;
 	}
 

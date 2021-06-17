@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import pe.edu.upc.hope.model.entity.Product;
 import pe.edu.upc.hope.model.repository.ProductRepository;
 import pe.edu.upc.hope.service.ProductService;
-// CAMBIAR PANDEMIA POR EL NOMBRE DEL PROYECTO
+
 
 @Service
 public class ProductServiceImpl implements ProductService{
@@ -17,7 +17,7 @@ public class ProductServiceImpl implements ProductService{
 	
 	@Override
 	public JpaRepository<Product, Integer> getRepository() {
-		// TODO Auto-generated method stub
+	
 		return productRepository;
 	}
 

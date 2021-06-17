@@ -1,7 +1,6 @@
 package pe.edu.upc.hope.service.impl;
 
 import pe.edu.upc.hope.model.entity.Category;
-import pe.edu.upc.hope.model.entity.Pharmacy;
 import pe.edu.upc.hope.model.repository.CategoryRepository;
 import pe.edu.upc.hope.service.CategoryService;
 
