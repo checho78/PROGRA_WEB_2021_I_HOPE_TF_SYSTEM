@@ -20,4 +20,8 @@ public class FrontController {
 		return "layout/home";
 	}
 	
+	@GetMapping("allProducts")
+	public String allProducts() {
+		return "layout/allProducts";
+	}
 }
