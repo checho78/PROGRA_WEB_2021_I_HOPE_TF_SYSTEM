@@ -40,7 +40,7 @@ public class SearchController {
 		return "search/district";
 	}
 	
-	@PostMapping("categoryName")		// POST: /search/employees
+	@PostMapping("categoryName")		// POST: /search/category
 	public String searchCategoryByName(Model model , @ModelAttribute("categorySearch") Category categoryNameSearch) 
 	{
 		System.out.println("LLEGO");
