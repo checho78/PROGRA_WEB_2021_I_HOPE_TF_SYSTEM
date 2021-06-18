@@ -2,107 +2,155 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head th:fragment="head(title)">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
-  <link th:href="@{/css/fontawesome.min.css}" rel="stylesheet">
-  <link th:href="@{/css/solid.min.css}" rel="stylesheet">
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+<link th:href="@{/css/fontawesome.min.css}" rel="stylesheet">
+<link th:href="@{/css/solid.min.css}" rel="stylesheet">
 
-  <title>Hope</title>
+<title>Hope</title>
 </head>
 <body>
 
 
-<div th:fragment="header">
-            <!-- this is header -->
-   <header th:fragment="header">
-  
-  	<nav  class="navbar navbar-expand-lg navbar-dark bg-info">
-	  <div class="container-fluid">	  
-	    <a style="color: 	#4f4399; font-weight: bold; " class="navbar-brand " href="#"> <i class="fas fa-clinic-medical"></i> Hope</a>	  
-	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-	      <span class="navbar-toggler-icon"></span>
-	    </button>
-	    
-	    <div class="collapse navbar-collapse" id="navbarScroll">
-	    
-	      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-	        <li class="nav-item">
-	          <a  style="color: #4f4399; font-weight: bold; "class="nav-link" aria-current="page" th:href="@{/home}">Home</a>
-	        </li>
-	        
-	     
-	        
-	        <li class="nav-item">
-	          <a  style="color: 	#4f4399; font-weight: bold; " class="nav-link active" th:href="@{/regions}">Filters</a>
-	        </li>
-	        <li class="nav-item">
-	          <a  style="color: 	#4f4399; font-weight: bold; " class="nav-link" th:href="@{/allProducts}">Products</a>
-	        </li>
-	         <li class="nav-item">
-	          <a style="color: 	#4f4399; font-weight: bold; " class="nav-link" href="#">Pharmacy</a>
-	        </li>
-	         <li class="nav-item">
-	          <a style="color: 	#4f4399; font-weight: bold; " class="nav-link"  th:href="@{/cards}">Cards</a>
-	        </li>
-	           
-	         <li class="nav-item">
-	          <a style="color: 	#4f4399; font-weight: bold; " class="nav-link" href="#">Sintoms</a>
-	        </li>
-	         <li class="nav-item">
-	          <a style="color: 	#4f4399; font-weight: bold; " class="nav-link" href="#">My Reservations</a>
-	        </li>
-	         <li class="nav-item">
-	          <a style="color: 	#4f4399; font-weight: bold; " class="nav-link" href="#">My Cart</a>
-	        </li>
-	       
-	      </ul>
-	      
-	   
-	      	      
-	      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-	        <li class="nav-item">
-	          <a style="color: 	#4f4399; font-weight: bold; " class="nav-link" aria-current="page" href="#">Sign in</a>
-	        </li>
-	        <li class="nav-item">
-	          <a style="color: 	#4f4399; font-weight: bold; " class="nav-link" href="#">Sign up</a>
-	        </li>
-	        <li class="nav-item dropdown bg-info">
-	          <a style="color: 	#4f4399; font-weight: bold; " class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-	            Profile
-	          </a>
-	          <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-	            <li><a style="color: 	#4f4399; font-weight: bold; " class="dropdown-item" href="#">View Perfile</a></li>
-	            <li><a style="color: 	#4f4399; font-weight: bold; " class="dropdown-item" href="#">Change Password</a></li>
-	            <li><hr class="dropdown-divider"></li>
-	            <li><a style="color: 	#4f4399; font-weight: bold; " class="dropdown-item" href="#">Log out</a></li>
-	          </ul>
-	        </li>
-	      </ul>
-	      
-	    </div>
-	  </div>
-	</nav>
-  	
-  </header>
-  
-  </div>
+	<div th:fragment="header">
+		<!-- this is header -->
+		<header th:fragment="header">
 
-  
-  
+			<nav class="navbar navbar-expand-lg navbar-dark bg-info">
+				<div class="container-fluid">
+					<a style="color: #4f4399; font-weight: bold;" class="navbar-brand "
+						href="#"> <i class="fas fa-clinic-medical"></i> Hope
+					</a>
+					<button class="navbar-toggler" type="button"
+						data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+						aria-controls="navbarScroll" aria-expanded="false"
+						aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+
+					<div class="collapse navbar-collapse" id="navbarScroll">
+
+						<ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
+							style="-bs-scroll-height: 100px;">
+							<li class="nav-item"><a
+								style="color: #4f4399; font-weight: bold;" class="nav-link"
+								aria-current="page" th:href="@{/home}">Home</a></li>
 
 
-<div class="content" th:fragment="footer_hope">
-		
-				<footer>
-					<!-- this is footer -->
-				             © HOPE - Todos los derechos reservados - 2021
-				</footer>
-		
+
+							<li class="nav-item"><a
+								style="color: #4f4399; font-weight: bold;"
+								class="nav-link active" th:href="@{/regions}">Filters</a></li>
+							<li class="nav-item"><a
+								style="color: #4f4399; font-weight: bold;" class="nav-link"
+								th:href="@{/allProducts}">Products</a></li>
+							<li class="nav-item"><a
+								style="color: #4f4399; font-weight: bold;" class="nav-link"
+								href="#">Pharmacy</a></li>
+							<li class="nav-item"><a
+								style="color: #4f4399; font-weight: bold;" class="nav-link"
+								th:href="@{/cards}">Cards</a></li>
+
+							<li class="nav-item"><a
+								style="color: #4f4399; font-weight: bold;" class="nav-link"
+								href="#">Sintoms</a></li>
+							<li class="nav-item"><a
+								style="color: #4f4399; font-weight: bold;" class="nav-link"
+								href="#">My Reservations</a></li>
+							<li class="nav-item"><a
+								style="color: #4f4399; font-weight: bold;" class="nav-link"
+								href="#">My Cart</a></li>
+
+						</ul>
+
+
+
+						<ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
+							style="-bs-scroll-height: 100px;">
+							<li class="nav-item"><a
+								style="color: #4f4399; font-weight: bold;" class="nav-link"
+								aria-current="page" href="#">Sign in</a></li>
+							<li class="nav-item"><a
+								style="color: #4f4399; font-weight: bold;" class="nav-link"
+								href="#">Sign up</a></li>
+							<li class="nav-item dropdown bg-info"><a
+								style="color: #4f4399; font-weight: bold;"
+								class="nav-link dropdown-toggle" href="#"
+								id="navbarScrollingDropdown" role="button"
+								data-bs-toggle="dropdown" aria-expanded="false"> Profile </a>
+								<ul class="dropdown-menu"
+									aria-labelledby="navbarScrollingDropdown">
+									<li><a style="color: #4f4399; font-weight: bold;"
+										class="dropdown-item" href="#">View Perfile</a></li>
+									<li><a style="color: #4f4399; font-weight: bold;"
+										class="dropdown-item" href="#">Change Password</a></li>
+									<li><hr class="dropdown-divider"></li>
+									<li><a style="color: #4f4399; font-weight: bold;"
+										class="dropdown-item" href="#">Log out</a></li>
+								</ul></li>
+						</ul>
+
+					</div>
+				</div>
+			</nav>
+
+		</header>
+
+	</div>
+
+
+	<div class="container bg-info">
+		<div class="row bg-info">
+			<div class="col-md-8 col-sm-6 col-xs-12 bg-info">
+				<p class="copyright-text">
+					Copyright &copy; 2017 All Rights Reserved by <a href="#">Scanfcode</a>.
+				</p>
+			</div>
+
 		</div>
-	
-  <script th:src="@{js/bootstrap.bundle.min.js}" ></script>
-  
-  </body>
+	</div>
+
+
+	<div class="content" th:fragment="footer_hope">
+		<!-- Site footer -->
+		<footer class="site-footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12 col-md-6">
+						<h6>About</h6>
+						<p class="text-justify">
+							<i>HOPE</i> It is an initiative to help people find the best
+							medicines and personal care products. It also offers the ability
+							to obtain these products in a simple and fast way.
+						</p>
+					</div>
+				</div>
+				<hr>
+			</div>
+
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-sm-6 col-xs-12">
+						<p class="copyright-text">
+							Copyright &copy; 2021 All Rights Reserved by <a
+								th:href="@{/home}">HOPE</a>.
+						</p>
+					</div>
+
+				</div>
+			</div>
+		</footer>
+
+	</div>
+
+
+
+
+
+
+	<script th:src="@{js/bootstrap.bundle.min.js}"></script>
+
+</body>
 </html>
