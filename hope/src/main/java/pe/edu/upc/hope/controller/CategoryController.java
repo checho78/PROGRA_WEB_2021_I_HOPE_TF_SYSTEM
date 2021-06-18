@@ -37,7 +37,7 @@ public class CategoryController {
 	}
 	
 	@GetMapping("{id}")		// GET: /category/{id}
-	public String findById(Model model, @PathVariable("id") Long idCategory) {
+	public String findById(Model model, @PathVariable("id") Integer idCategory) {
 		try {
 			Optional<Category> optional = categoryService.findById(idCategory);
 			if (optional.isPresent()) {
@@ -52,7 +52,7 @@ public class CategoryController {
 	}
 	//--------Edit -----------------------------
 	@GetMapping("{id}/edit")	// GET: /category/{id}/edit
-	public String editById(Model model, @PathVariable("id") Long idCategory) {
+	public String editById(Model model, @PathVariable("id") Integer idCategory) {
 		try {
 			Optional<Category> optional = categoryService.findById(idCategory);
 			if (optional.isPresent()) {
@@ -95,7 +95,7 @@ public class CategoryController {
 	}	
 	//---------- Delete---------------
 	@GetMapping("{id}/del")
-	public String delCategory(@PathVariable("id") Long idCategory ) {
+	public String delCategory(@PathVariable("id") Integer idCategory ) {
 		try {
 			Optional<Category> optional = categoryService.findById(idCategory);
 			if (optional.isPresent()) {
