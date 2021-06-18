@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head th:fragment="head(title)">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,6 +12,8 @@
   <title>Hope</title>
 </head>
 <body>
+
+
 <div th:fragment="header">
             <!-- this is header -->
    <header th:fragment="header">
@@ -26,7 +29,7 @@
 	    
 	      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
 	        <li class="nav-item">
-	          <a class="nav-link" aria-current="page" href="#">Home</a>
+	          <a class="nav-link" aria-current="page"th:href="@{/home}">Home</a>
 	        </li>
 	        
 	     
@@ -83,28 +86,22 @@
 	</nav>
   	
   </header>
-  <section >
-            <img src="images/fondo2.jpg" class="img-fluid" alt="">
-        </section>
+  
   </div>
 
   
-
   
-	<div th:fragment="footer">
 
-            <div class="container">
 
-                <footer>
-                    <!-- this is footer -->
-                    © HOPE - Todos los derechos reservados -2021
-                </footer>
-
-            </div>
-
-        </div>
+<div th:fragment="footer_hope">
+		
+				<footer>
+					<!-- this is footer -->
+				             © HOPE - Todos los derechos reservados -2021
+				</footer>
+		
+		</div>
 	
-
   <script th:src="@{js/bootstrap.bundle.min.js}" ></script>
   
   </body>
