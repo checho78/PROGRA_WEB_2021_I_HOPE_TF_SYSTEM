@@ -19,8 +19,8 @@ public class Brand {
 
 	 @Id
 	 @GeneratedValue(strategy= GenerationType.IDENTITY)
-	 @Column(name="idCategory")
-	    private Integer idCategory;
+	 @Column(name="idBrand")
+	    private Integer idBrand;
 	 
     @Column(name = "name", length = 30)
     private String name;
@@ -37,22 +37,22 @@ public class Brand {
 
     
     
-	public Brand(Integer idCategory, String name, List<Product> products) {
+	public Brand(Integer idBrandCategory, String name, List<Product> products) {
 		super();
-		this.idCategory = idCategory;
+		this.idBrand = idBrand;
 		this.name = name;
 		this.products = products;
 	}
 
 
 
-	public Integer getIdCategory() {
-		return idCategory;
+	public Integer getIdBrand() {
+		return idBrand;
 	}
 
 
-	public void setIdCategory(Integer idCategory) {
-		this.idCategory = idCategory;
+	public void setIdBrand(Integer idBrand) {
+		this.idBrand = idBrand;
 	}
 
 	public String getName() {
