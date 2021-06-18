@@ -26,7 +26,7 @@ public class SearchController {
 	private CategoryService categoryService;
 	
 	@PostMapping("district")		// POST: /search/employees
-	public String searchDistrict(Model model , @ModelAttribute("employeeSearch") Pharmacy districtSearch) {
+	public String searchDistrict(Model model , @ModelAttribute("pharmacySearch") Pharmacy districtSearch) {
 		System.out.println("LLEGO");
 		List<Pharmacy> district = null;
 		try {
