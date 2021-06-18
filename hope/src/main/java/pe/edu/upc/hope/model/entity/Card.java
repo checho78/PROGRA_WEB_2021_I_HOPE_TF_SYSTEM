@@ -38,7 +38,7 @@ public class Card {
 
     
     @ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "idCustomer", nullable = false)
+	@JoinColumn(name = "idCustomer", nullable = true)
 	private Customer  customer;
 
 

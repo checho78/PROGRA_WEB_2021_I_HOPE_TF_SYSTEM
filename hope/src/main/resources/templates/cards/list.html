@@ -5,6 +5,7 @@
 </head>
 <body>
 	<header th:replace="layout/layout :: header"></header>
+	
 	<h1>Card List</h1>
 
 	<div class="card text-center" style="width: 40rem;">
@@ -14,7 +15,6 @@
 				<thead>
 					<tr>
 						<th scope="col">#</th>
-						<th scope="col" style="width: 25rem;">Name</th>
 						<th scope="col" style="width: 25rem;">Num Card</th>
 						<th scope="col" style="width: 25rem;">Expiration Date</th>
 						<th scope="col" style="width: 25rem;">CVV</th>
@@ -24,11 +24,11 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="card : ${cards}">
-						<th scope="row" th:text="${card.idCard}"></th>
-						<td th:text="${card.numCard}"></td>
-						<td th:text="${card.expirationDate}"></td>
-						<td th:text="${card.cvv}"></td>
+					<tr th:each="card : ${cards}"> 
+						<th scope="row" th:text="${card.idCard}"> 1</th>
+						<td th:text="${card.numCard}">1234</td>
+						<td th:text="${card.expirationDate}"> 34</td>
+						<td th:text="${card.cvv}">1234</td>
 
 						<td><a th:href="@{'/cards/' + ${card.id}}"
 							class="btn btn-info"><i class="fas fa-eye"></i></a></td>
@@ -46,6 +46,9 @@
 				class="fas fa-plus-square"></i> New Card</a>
 		</div>
 	</div>
+	
+	
+	
 	<footer th:replace="layout/layout :: footer"></footer>
 
 	<script th:src="@{js/bootstrap.bundle.min.js}"></script>
