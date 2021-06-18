@@ -78,7 +78,7 @@ public class CategoryController {
 	}	
 	// -----------------New----------------------
 	@GetMapping("new")	// GET: /category/new
-	public String newbrand(Model model) {
+	public String newcategory(Model model) {
 		Category category = new Category();
 		model.addAttribute("categoryNew", category);
 		return "categories/new";
