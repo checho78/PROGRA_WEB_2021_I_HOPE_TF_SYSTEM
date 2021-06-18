@@ -35,7 +35,7 @@ public class ReservationController {
 		}
 		return "reservations/list";
 	}
-	@GetMapping("{id}")		// GET: /brand/{id}
+	@GetMapping("{id}")		// GET: /reservation/{id}
 	public String findById(Model model, @PathVariable("id") Integer id) {
 		try {
 			Optional<Reservation> optional = reservationService.findById(id);
@@ -50,7 +50,7 @@ public class ReservationController {
 		return "redirect:/reservations";
 	}
 	//--------Edit -----------------------------
-	@GetMapping("{id}/edit")	// GET: /brand/{id}/edit
+	@GetMapping("{id}/edit")	// GET: //{id}/edit
 	public String editById(Model model, @PathVariable("id") Integer id) {
 		try {
 			Optional<Reservation> optional = reservationService.findById(id);
@@ -77,7 +77,7 @@ public class ReservationController {
 	}	
 	// -----------------New----------------------
 	@GetMapping("new")	// GET: /reservations/new
-	public String newbrand(Model model) {
+	public String newreservation(Model model) {
 		Reservation reservation = new Reservation();
 		model.addAttribute("reservationNew", reservation);
 		return "reservations/new";
@@ -94,7 +94,7 @@ public class ReservationController {
 	}	
 	//---------- Delete---------------
 	@GetMapping("{id}/del")
-	public String delBrand(@PathVariable("id") Integer id ) {
+	public String delReservation(@PathVariable("id") Integer id ) {
 		try {
 			Optional<Reservation> optional = reservationService.findById(id);
 			if (optional.isPresent()) {
