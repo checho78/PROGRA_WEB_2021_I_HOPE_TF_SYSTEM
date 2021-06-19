@@ -44,7 +44,7 @@ public class FrontController {
 		return "layout/reservation";
 	}
 	
-	@GetMapping("myReservation")
+	@GetMapping("myReservations")
 	public String myReservations() {
 		return "layout/myReservations";
 	}
