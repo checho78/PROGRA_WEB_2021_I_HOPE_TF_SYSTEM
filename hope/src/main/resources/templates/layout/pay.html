@@ -6,14 +6,14 @@
 
     <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
 
-    <title>New Card item</title>
+    <title>Pago</title>
   </head>
   <body>
   
 <header th:replace="layout/layout :: header"></header>
 	
     	<section style="padding: 30px;"> 
-    <h1>New Card Item</h1>
+    <h1>Realiza tu pago</h1>
 	
 	<div class="card" style="width: 20rem;">
 	  <div class="card-body">
@@ -21,21 +21,26 @@
 	    <form method="post">
 		  
 		  <div class="mb-3">
-		    <label for="name" class="form-label">Num Card</label>		    
+		    <label for="name" class="form-label">Description</label>		    
 		    <input type="text" class="form-control" aria-describedby="nameHelp">		    
-		    <div id="nameHelp" class="form-text">Register the numer  of the card.</div> 
+		    <div id="nameHelp" class="form-text">Registra la descripcion a ingresar de la reserva</div> 
 		  </div>
-		  
-		  
-	
-		  
-	
-		  <button type="submit" class="btn btn-success">Save</button>
+
+
+					<div class="input-group mb-3">
+						<select class="form-select" id="inputGroupSelect02">
+							<option selected>Selecciona tu tarjeta </option>
+							<option value="1">Visa</option>
+							<option value="2">BCP</option>
+		
+					</div>
+				
+		 
 		</form>
 	  </div>
 	</div>
-		
-	<a class="btn btn-primary"><i class="fas fa-plus-square"></i> Return</a>
+		 <button type="submit" class="btn btn-success">Pagar</button>
+	<a class="btn btn-primary"><i class="fas fa-plus-square"></i> Cancelar</a>
 
 	</section>	
 	
