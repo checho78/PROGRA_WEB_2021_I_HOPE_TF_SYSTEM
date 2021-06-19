@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head(title)">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+<link th:href="@{/css/fontawesome.min.css}" rel="stylesheet">
+<link th:href="@{/css/solid.min.css}" rel="stylesheet">
+
+<title>All Pharmacies</title>
+
+
+</head>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+<section style="margin: 20px;">
+ 	<nav aria-label="breadcrumb">
+	  <ol class="breadcrumb">
+	    <li class="breadcrumb-item"><a th:href="@{/home}">Home</a></li>
+	    <li class="breadcrumb-item active" aria-current="page">Pharmacies</li>
+	  </ol>
+	</nav>
+ </section>
+
+
+	<section style="padding: 30px;">
+	
+<div class="row row-cols-1 row-cols-md-5 g-6">
+  <div class="col">
+    <div class="card">
+      <img src="images/vap.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Farmacia NorFarma</h5>
+    <p class="card-text">Distrito: San Miguel </p>
+
+    <a href="#" class="btn btn-primary">Show details</a>
+    <a th:href="@{/allProducts}" class="btn btn-danger">Products</a>
+      </div>
+    </div>
+  </div>
+  
+   <div class="col">
+    <div class="card">
+      <img src="images/toallas-femeninas.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Farmacia Vida&Salud</h5>
+    <p class="card-text"> Distrito: San Martin de Porres</p>
+    <a href="#" class="btn btn-primary">Show details</a>
+    <a th:href="@{/allProducts}" class="btn btn-danger">Products</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col">
+    <div class="card">
+      <img src="images/panadol-extra.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Farmacia Esperanza</h5>
+    <p class="card-text">Distrito: San Isidro</p>
+       <a href="#" class="btn btn-primary">Show details</a>
+    <a th:href="@{/allProducts}" class="btn btn-danger">Products</a>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  
+</div>
+
+
+
+
+
+	</section>
+	<footer th:replace="layout/layout :: footer_hope"></footer>
+
+	<script th:src="@{js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>
