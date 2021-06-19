@@ -4,11 +4,8 @@ spring:
       # Conn : SGDB : HOST : PORT : DB-Name
     url: jdbc:postgresql://localhost:5432/dbhope
     username: postgres
-<<<<<<< HEAD
     password: postgres2021
-=======
-    password: thelemonsong2307
->>>>>>> branch 'main' of https://github.com/checho78/TF_PROGRAMACIONWEB_2021_1.git
+
   jpa:
     database: postgresql
     hibernate:
