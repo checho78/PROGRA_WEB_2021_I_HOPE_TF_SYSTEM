@@ -56,10 +56,10 @@
 
 						<div class="card-body">
 							<h5 class="card-title">
-								<i class="fas fa-cart-plus"></i> Panadol
+								<i class="fas fa-cart-plus"></i> Jarabe de la tos
 							</h5>
 							<p class="card-text">
-								<small class="text-muted">S/1</small>
+								<small class="text-muted">S/12.50</small>
 								<div class="d-grid gap-2 d-md-flex justify-content-md-end">
 								<button class="btn btn-danger me-md-2" type="button">X</button>
 
@@ -98,8 +98,8 @@
 		<div class="d-grid gap-2 col-6 mx-auto justify-content-md-end">
 			<p style="color: #342c66; font-size: 20pt; font-weight: bold;">Total: </p>
 			<div class="d-grid gap-2 d-md-flex justify-content-md-end ">
-			<button class="btn btn-primary me-md-2" type="button">Return</button>
-			<button class="btn btn-warning" type="button">Pay</button>
+			<button th:href="@{/allProducts}" class="btn btn-primary me-md-2" type="button">Return</button>
+			<a th:href="@{/pay}" class="btn btn-warning" >Pay</a>
 		</div>
 		</div>
 		

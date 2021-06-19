@@ -34,12 +34,19 @@ public class FrontController {
 		return "layout/viewDetails";
 	}
 	
-	
 	@GetMapping("pay")
 	public String pay() {
 		return "layout/pay";
 	}
 	
+	@GetMapping("reservation")
+	public String reservation() {
+		return "layout/reservation";
+	}
 	
+	@GetMapping("myReservation")
+	public String myReservations() {
+		return "layout/myReservations";
+	}
 	
 }

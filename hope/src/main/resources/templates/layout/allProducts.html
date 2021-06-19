@@ -14,7 +14,14 @@
 </head>
 <body>
 	<header th:replace="layout/layout :: header"></header>
-
+<section style="margin: 20px;">
+ 	<nav aria-label="breadcrumb">
+	  <ol class="breadcrumb">
+	    <li class="breadcrumb-item"><a th:href="@{/home}">Home</a></li>
+	    <li class="breadcrumb-item active" aria-current="page">Products</li>
+	  </ol>
+	</nav>
+ </section>
 
 
 	<section style="padding: 30px;">
