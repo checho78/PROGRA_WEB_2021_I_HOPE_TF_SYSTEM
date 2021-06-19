@@ -33,4 +33,13 @@ public class FrontController {
 	public String viewDetails() {
 		return "layout/viewDetails";
 	}
+	
+	
+	@GetMapping("pay")
+	public String pay() {
+		return "layout/pay";
+	}
+	
+	
+	
 }
