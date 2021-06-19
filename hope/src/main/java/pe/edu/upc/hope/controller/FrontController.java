@@ -29,4 +29,8 @@ public class FrontController {
 	public String shoppingCart() {
 		return "layout/shoppingCart";
 	}
+	@GetMapping("viewDetails")
+	public String viewDetails() {
+		return "layout/viewDetails";
+	}
 }
