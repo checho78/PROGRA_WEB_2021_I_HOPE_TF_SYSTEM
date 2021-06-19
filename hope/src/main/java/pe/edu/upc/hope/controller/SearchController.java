@@ -22,26 +22,10 @@ public class SearchController {
 	@Autowired
 	private PharmacyService pharmacyService;
 	
-	@PostMapping("district")		// POST: /search/pharmacies
-	public String searchDistrict(Model model , @ModelAttribute("employeeSearch") Pharmacy districtSearch) 
-       {
-		System.out.println("LLEGO");
-		List<Pharmacy> district = null;
-		try {
-			district = pharmacyService.findByDistrict(districtSearch.getDistrict()); 
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		model.addAttribute("district", district);
-		model.addAttribute("districtSearch", districtSearch);
+	@GetMapping("district")
+	public String district() {
 		return "search/district";
 	}
 	
 }
-
-
-
-
-
 
