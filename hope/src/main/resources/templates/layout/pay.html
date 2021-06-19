@@ -6,12 +6,70 @@
 
 <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
 
-<title>Busqueda por Distrito</title>
+<title>Pago</title>
 </head>
 <body>
 
 	<header th:replace="layout/layout :: header"></header>
-	
+	<section style="margin: 20px;">
+		<nav aria-label="breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a th:href="@{/home}">Home</a></li>
+				<li class="breadcrumb-item"><a th:href="@{/allProducts}">Products</a></li>
+				<li class="breadcrumb-item"><a th:href="@{/shoppingCart}">My
+						Cart</a></li>
+				<li class="breadcrumb-item active" aria-current="page">Pay</li>
+			</ol>
+		</nav>
+	</section>
+	<section style="padding: 30px;">
+		<h1>Realiza tu pago</h1>
+
+		<div class="card" style="width: 20rem;">
+			<div class="card-body">
+
+				<form method="post">
+
+					<div class="mb-3">
+						<label for="name" class="form-label">Description</label> <input
+							type="text" class="form-control" aria-describedby="nameHelp">
+						<div id="nameHelp" class="form-text">Registra la descripcion
+							a ingresar de la reserva</div>
+					</div>
+
+					<div class="input-group mb-3">
+
+						<select> class="form-select" id="inputGroupSelect02"
+							<option selected>Selecciona tu tarjeta</option>
+							<option value="1">Visa</option>
+							<option value="2">BCP</option>
+						</select>
+
+					</div>
+
+				</form>
+			</div>
+			<a th:href="@{/reservation}" class="btn btn-success">Pay</a>
+			 <a
+				th:href="@{/shoppingCart}" class="btn btn-danger"><i
+				class="fas fa-plus-square"></i> Cancel</a>
+
+		</div>
+
+		<div class="d-grid gap-2 col-6 mx-auto justify-content-md-end">
+			<p style="color: #342c66; font-size: 20pt; font-weight: bold;">Don't
+				have a card?</p>
+			<p style="color: #342c66; font-size: 16pt;">Register it</p>
+
+			<div class="d-grid gap-2 d-md-flex justify-content-md-end ">
+				
+	<a th:href="@{'/cards/new'}" class="btn btn-primary"><i
+				class="fas fa-plus-square"></i>Add Card</a>
+			</div>
+		</div>
+
+
+	</section>
 
 	<footer th:replace="layout/layout :: footer_hope"></footer>
 
