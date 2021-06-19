@@ -15,9 +15,17 @@
 <body>
 	<header th:replace="layout/layout :: header"></header>
 
+<section style="margin: 20px;">
+ 	<nav aria-label="breadcrumb">
+	  <ol class="breadcrumb">
+	    <li class="breadcrumb-item"><a th:href="@{/home}">Home</a></li>
+	    <li class="breadcrumb-item"><a th:href="@{/allProducts}">Products</a></li>
+	    <li class="breadcrumb-item active" aria-current="page">View Details Product</li>
+	  </ol>
+	</nav>
+ </section>
 
-
-	<section style="padding: 90px;">
+	<section style="padding: 70px;">
 
 <div class="card mb-3" style="max-width: 540px;">
   <div class="row g-0">
@@ -37,7 +45,7 @@
         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-								<button class="btn btn-success me-md-2" type="button">Add to cart</button>
+								<a th:href="@{/shoppingCart}" class="btn btn-success">Add to Cart</a>
 
 							</div>
       </div>
