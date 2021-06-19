@@ -54,5 +54,11 @@ public class FrontController {
 	public String allPharmacies() {
 		return "layout/allPharmacies";
 	}
+
+	@GetMapping("viewDetailsPharmacies")
+	public String viewDetailsPharmacies() {
+		return "layout/viewDetailsPharmacies";
+	}
+	
 	
 }
