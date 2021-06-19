@@ -42,9 +42,10 @@
 
 							<li class="nav-item"><a
 								style="color: #4f4399; font-weight: bold;"
-								class="nav-link active" >Filters</a></li>
+								class="nav-link active">Filters</a></li>
 							<li class="nav-item"><a
-								style="color: #4f4399; font-weight: bold;" th:href="@{/allProducts}" class="nav-link">Products</a></li>
+								style="color: #4f4399; font-weight: bold;"
+								th:href="@{/allProducts}" class="nav-link">Products</a></li>
 							<li class="nav-item"><a
 								style="color: #4f4399; font-weight: bold;" class="nav-link"
 								th:href="@{/allPharmacies}">Pharmacy</a></li>
@@ -56,14 +57,24 @@
 								style="color: #4f4399; font-weight: bold;" class="nav-link"
 								href="#">Sintoms</a></li>
 							<li class="nav-item"><a
-								style="color: #4f4399; font-weight: bold;" th:href="@{/myReservations}" class="nav-link"
-								>My Reservations</a></li>
+								style="color: #4f4399; font-weight: bold;"
+								th:href="@{/myReservations}" class="nav-link">My
+									Reservations</a></li>
 							<li class="nav-item"><a
 								style="color: #4f4399; font-weight: bold;" class="nav-link"
 								href="#">My Cart</a></li>
 
 						</ul>
-
+						
+						<form class="d-flex"
+						method="post">
+							<input class="form-control me-2" type="search"
+						 placeholder="Search Products"
+								aria-label="Search">
+							<button class="btn btn-warning" type="submit">
+								<i class="fas fa-search"></i>
+							</button>
+						</form>
 
 
 						<ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
@@ -113,48 +124,46 @@
 
 
 	<div class="content" th:fragment="footer_hope">
-<section class="">
-  <!-- Footer -->
-  <footer class="bg-secondary text-white">
-    <!-- Grid container -->
-    <div class="container p-4">
-      <!--Grid row-->
-      <div class="row">
-        <!--Grid column-->
-        <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-          <h5 class="text-uppercase">About us</h5>
+		<section class="">
+			<!-- Footer -->
+			<footer class="bg-secondary text-white">
+				<!-- Grid container -->
+				<div class="container p-4">
+					<!--Grid row-->
+					<div class="row">
+						<!--Grid column-->
+						<div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+							<h5 class="text-uppercase">About us</h5>
 
-          <p>
-<i>HOPE</i> It is an initiative to help people find the best medicines and personal care products. It also offers the ability to obtain these products in a simple and fast way.
+							<p>
+								<i>HOPE</i> It is an initiative to help people find the best
+								medicines and personal care products. It also offers the ability
+								to obtain these products in a simple and fast way.
 
-          </p>
-        </div>
-        <!--Grid column-->
+							</p>
+						</div>
+						<!--Grid column-->
 
-        <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          
-        </div>
-        <!--Grid column-->
+						<!--Grid column-->
+						<div class="col-lg-3 col-md-6 mb-4 mb-md-0"></div>
+						<!--Grid column-->
 
-        <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          
-        </div>
-        <!--Grid column-->
-      </div>
-      <!--Grid row-->
-    </div>
-    <!-- Grid container -->
+						<!--Grid column-->
+						<div class="col-lg-3 col-md-6 mb-4 mb-md-0"></div>
+						<!--Grid column-->
+					</div>
+					<!--Grid row-->
+				</div>
+				<!-- Grid container -->
 
-    <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(72,61,139);">
-      © HOPE - Todos los derechos reservados - 2021
-    </div>
-    <!-- Copyright -->
-  </footer>
-  <!-- Footer -->
-</section>
+				<!-- Copyright -->
+				<div class="text-center p-3"
+					style="background-color: rgba(72, 61, 139);">© HOPE - Todos
+					los derechos reservados - 2021</div>
+				<!-- Copyright -->
+			</footer>
+			<!-- Footer -->
+		</section>
 
 	</div>
 
