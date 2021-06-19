@@ -15,35 +15,49 @@
 <body>
 	<header th:replace="layout/layout :: header"></header>
 
-
+	<section style="margin: 20px;">
+		<nav aria-label="breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a th:href="@{/home}">Home</a></li>
+				<li class="breadcrumb-item "><a th:href="@{/allPharmacies}">Pharmacies</a></li>
+					<li class="breadcrumb-item active" aria-current="page">Pharmacies Detail</li>
+			</ol>
+		</nav>
+	</section>
 
 	<section style="padding: 90px;">
 
-<div class="card mb-3" style="max-width: 540px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="images/localpharmacy2.jpg" class="card-img-top" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-      <p class="card-title"><small class="text-muted">Farmacia Vida&Salud</small></p>
-        <h4 class="card-title">La Marina 394</h4>
-        <h5 class="card-title">San Miguel</h5>
-        <p class="card-text">- Farmacia dedicada a la venta de Medicamentos e Insumos de Salud a bajo precio</p>
-        <p class="card-text">- Hora de inicio: 07 </p>
-        <p class="card-text">-Hora de Cerrado: 21</p>
-        <p class="card-text">- RUC: 1232389483</p>
+		<div class="card mb-3" style="max-width: 540px;">
+			<div class="row g-0">
+				<div class="col-md-4">
+					<img src="images/localpharmacy2.jpg" class="card-img-top" alt="...">
+				</div>
+				<div class="col-md-8">
+					<div class="card-body">
+						<p class="card-title">
+							<small class="text-muted">Farmacia Vida&Salud</small>
+						</p>
+						<h4 class="card-title">La Marina 394</h4>
+						<h5 class="card-title">San Miguel</h5>
+						<p class="card-text">- Farmacia dedicada a la venta de
+							Medicamentos e Insumos de Salud a bajo precio</p>
+						<p class="card-text">- Hora de inicio: 07</p>
+						<p class="card-text">-Hora de Cerrado: 21</p>
+						<p class="card-text">- RUC: 1232389483</p>
 
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-							
-   <a th:href="@{/allProducts}" class="btn btn-danger">Show Products</a>
-							</div>
-      </div>
-    </div>
-  </div>
-</div>
+						<p class="card-text">
+							<small class="text-muted">Last updated 3 mins ago</small>
+						</p>
+
+						<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+							<a th:href="@{/allPharmacies}" class="btn btn-danger">Return</a>
+							<a th:href="@{/allProducts}" class="btn btn-success">Show
+								Products</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 	</section>
 
