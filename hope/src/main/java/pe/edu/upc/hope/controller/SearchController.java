@@ -27,5 +27,10 @@ public class SearchController {
 		return "search/district";
 	}
 	
+	@GetMapping("sintom")
+	public String sintom() {
+		return "search/sintom";
+	}
+	
 }
 
