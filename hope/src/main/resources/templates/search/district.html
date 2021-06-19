@@ -1,22 +1,93 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:fragment="head(title)">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+<link th:href="@{/css/fontawesome.min.css}" rel="stylesheet">
+<link th:href="@{/css/solid.min.css}" rel="stylesheet">
 
-<title>Busqueda por distrito</title>
+<title>All Pharmacies</title>
+
+
 </head>
 <body>
-
 	<header th:replace="layout/layout :: header"></header>
 
+	<section style="margin: 20px;">
+		<nav aria-label="breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a th:href="@{/home}">Home</a></li>
+				<li class="breadcrumb-item active" aria-current="page">Pharmacies</li>
+			</ol>
+		</nav>
+	
+	</section>
+	<form class="d-flex"
+						method="post">
+							<input class="form-control me-2" type="search"
+						 placeholder="Search Distict"
+								aria-label="Search">
+							<button class="btn btn-warning" type="submit">
+								<i class="fas fa-search"></i>
+							</button>
+						</form>
+
+
+	<section style="padding: 30px;">
+
+		<div class="row row-cols-1 row-cols-md-5 g-6">
+			<div class="col">
+				<div class="card">
+					<img src="images/localpharmacy1.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">Farmacia NorFarma</h5>
+						<p class="card-text">Distrito: San Martin de Porres</p>
+
+						<a href="#" class="btn btn-primary">Show details</a> <a
+							th:href="@{/allProducts}" class="btn btn-danger">Products</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col">
+				<div class="card">
+					<img src="images/localpharmacy2.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">Farmacia Vida&Salud</h5>
+						<p class="card-text">Distrito: San Miguel</p>
+						<a th:href="@{/viewDetailsPharmacies}" class="btn btn-primary">Show
+							details</a> <a th:href="@{/allProducts}" class="btn btn-danger">Products</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col">
+				<div class="card">
+					<img src="images/localpharmacy3.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">Farmacia Esperanza</h5>
+						<p class="card-text">Distrito: San Isidro</p>
+						<a href="#" class="btn btn-primary">Show details</a>
+						 <a	th:href="@{/allProducts}" class="btn btn-danger">Products</a>
+					</div>
+				</div>
+			</div>
 
 
 
+
+
+
+		</div>
+
+
+
+
+
+	</section>
 	<footer th:replace="layout/layout :: footer_hope"></footer>
-
 
 	<script th:src="@{js/bootstrap.bundle.min.js}"></script>
 </body>
