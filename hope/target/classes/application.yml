@@ -4,7 +4,7 @@ spring:
       # Conn : SGDB : HOST : PORT : DB-Name
     url: jdbc:postgresql://localhost:5432/dbhope
     username: postgres
-    password: postgres2021
+    password: contra
 
   jpa:
     database: postgresql
@@ -16,3 +16,5 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 server:
   port: 8091
+
+        

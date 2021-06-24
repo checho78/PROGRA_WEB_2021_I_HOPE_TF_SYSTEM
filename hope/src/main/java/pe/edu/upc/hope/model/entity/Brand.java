@@ -37,7 +37,7 @@ public class Brand {
 
     
     
-	public Brand(Integer idBrandCategory, String name, List<Product> products) {
+	public Brand( String name, List<Product> products, Integer idBrand) {
 		super();
 		this.idBrand = idBrand;
 		this.name = name;
