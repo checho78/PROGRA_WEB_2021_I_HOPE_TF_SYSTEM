@@ -4,7 +4,7 @@ spring:
       # Conn : SGDB : HOST : PORT : DB-Name
     url: jdbc:postgresql://localhost:5432/dbhope
     username: postgres
-    password: contra
+    password: postgres2021
 
   jpa:
     database: postgresql
