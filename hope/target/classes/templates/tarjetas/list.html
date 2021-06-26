@@ -18,12 +18,15 @@
 						<th scope="col" style="width: 25rem;">Expiration Month</th>
 						<th scope="col" style="width: 25rem;">Expiration Year</th>
 						<th scope="col" style="width: 25rem;">CVV</th>
+						<th scope="col" style="width: 25rem;">Cliente</th>
 						<th scope="col"></th>
 						<th scope="col"></th>
 						<th scope="col"></th>
 					</tr>
 				</thead>
 				<tbody>
+				
+				
 					<tr th:each="tarjeta : ${tarjetas}">
 						<th scope="row" th:text="${tarjeta.idTarjeta}">1</th>
 						<td th:text="${tarjeta.numTarjeta}">1234 5678 2345 4567</td>
@@ -31,6 +34,7 @@
 						<td th:text="${tarjeta.expirationMonth}">12</td>
 						<td th:text="${tarjeta.expirationYear}">25</td>
 						<td th:text="${tarjeta.cvv}">123</td>
+							<td th:text="${tarjeta.cliente.idCliente}">pancho</td>
 
 						<td><a th:href="@{'/tarjetas/' + ${tarjeta.idTarjeta}}"
 							class="btn btn-info"><i class="fas fa-eye"></i></a></td>
@@ -40,6 +44,7 @@
 						<td><a
 							th:href="@{'/tarjetas/' + ${tarjeta.idTarjeta} + '/del'}"
 							class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>
+						
 					</tr>
 				</tbody>
 			</table>

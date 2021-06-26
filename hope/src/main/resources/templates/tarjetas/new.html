@@ -40,6 +40,22 @@
 		    <input type="text" class="form-control" th:field="*{cvv}">		    
 		  </div>
 		  
+		  
+	
+		  <div class="mb-3 row">
+		    <label for="cliente" class="col-sm-4 col-form-label">Cliente :</label>
+		    <div class="col-sm-8">
+		      	
+		      	<select th:field="*{cliente}" class="form-select" aria-label="Default select example">
+				  <option th:each="cliente : ${clientes}"
+				  		th:value="${cliente.idCliente}"
+				  		th:text="${cliente.firstName}" >One</option>
+				</select>
+		    </div>
+		  </div>
+		  
+		 
+		  
 		  <button type="submit" class="btn btn-success">Save</button>
 		</form>
 	  </div>

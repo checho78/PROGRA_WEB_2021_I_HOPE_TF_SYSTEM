@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -28,21 +30,29 @@ public class Tarjeta {
 
     @Column(name = "cvv", length = 3  ,nullable = false)
     private String cvv;
+   
+    
+    @ManyToOne
+	@JoinColumn(name = "cliente_id", nullable = true)
+	private Cliente cliente;
+	
+	
     
 	// -- Constructor, Getter y Setter
     
-	public Tarjeta(Integer idTarjeta, String numTarjeta, int expirationMonth, int expirationYear, String cvv) {
-		super();
-		this.idTarjeta = idTarjeta;
-		this.numTarjeta = numTarjeta;
-		this.expirationMonth = expirationMonth;
-		this.expirationYear = expirationYear;
-		this.cvv = cvv;
-	}
+
 
 	public Tarjeta() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
 
 	public Integer getIdTarjeta() {

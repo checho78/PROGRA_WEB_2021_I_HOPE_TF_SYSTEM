@@ -1,10 +1,15 @@
 package pe.edu.upc.hope.model.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -35,26 +40,24 @@ public class Cliente {
 	@Column(name = "password", length = 20, nullable = false)
 	private String password;
 
+	@OneToMany(mappedBy = "cliente", fetch = FetchType.LAZY)
+	private List<Tarjeta> tarjetas;
 
 	
 	// -- Constructor, Getter y Setter
 	
 	public Cliente() {
-		super();
-		// TODO Auto-generated constructor stub
+		tarjetas= new ArrayList<Tarjeta> ();
 	}
 
 
+	public List<Tarjeta> getTarjetas() {
+		return tarjetas;
+	}
 
-	public Cliente(Integer idCliente, String firstName, String lastName, String cellphone,String email,
-			String password) {
-		super();
-		this.idCliente = idCliente;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.cellphone = cellphone;
-		this.email = email;
-		this.password = password;
+
+	public void setTarjetas(List<Tarjeta> tarjetas) {
+		this.tarjetas = tarjetas;
 	}
 
 

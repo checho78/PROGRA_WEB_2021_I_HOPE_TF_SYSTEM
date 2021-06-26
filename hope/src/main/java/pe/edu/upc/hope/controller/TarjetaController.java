@@ -19,6 +19,9 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import pe.edu.upc.hope.model.entity.Tarjeta;
 import pe.edu.upc.hope.service.TarjetaService;
 
+import pe.edu.upc.hope.model.entity.Cliente;
+import pe.edu.upc.hope.service.ClienteService;
+
 @Controller
 @RequestMapping("/tarjetas")	// GET y POST
 @SessionAttributes("tarjetaEdit")
@@ -27,11 +30,17 @@ public class TarjetaController {
 	@Autowired
 	private TarjetaService tarjetaService; 
 	
+	@Autowired
+	private ClienteService clienteService; 
+	
+	
 	@GetMapping		// GET: /tarjeta
 	public String list(Model model) {
 		try {
 			List<Tarjeta> tarjetas = tarjetaService.getAll();
+			 
 			model.addAttribute("tarjetas", tarjetas);
+		 	
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.err.println(e.getMessage());
@@ -82,8 +91,18 @@ public class TarjetaController {
 	// -----------------New----------------------
 	@GetMapping("new")	// GET: /tarjeta/new
 	public String newtarjeta(Model model) {
-		Tarjeta tarjeta = new Tarjeta();
-		model.addAttribute("tarjetaNew", tarjeta);
+		
+		try {
+			Tarjeta tarjeta = new Tarjeta();
+			List<Cliente> clientes = clienteService.getAll();
+			model.addAttribute("tarjetaNew", tarjeta);
+			model.addAttribute("clientes", clientes);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.err.println(e.getMessage());
+		}
+
 		return "tarjetas/new";
 	}
 	@PostMapping("savenew")	// POST: /tarjeta/savenew
