@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head(~{::title})">
+	<title>Customers edit </title>
+</head>
+ <body>
+ 	<header th:replace="layout/layout :: header"></header>
+   <h1>Editing Customer Item</h1>
+
+<div class="card" style="width: 20rem;">
+  <div class="card-body">
+    
+    <form th:action="@{/customers/saveedit}" th:object="${customerEdit}" method="post">
+	
+	
+	  <div class="mb-3">
+		    <label for="name" class="form-label">First Name</label>		    
+		    <input type="text" class="form-control" th:field="*{firstName}">		    
+		  </div>
+		  
+		  
+		   <div class="mb-3">
+		    <label for="name" class="form-label">Last Namw</label>		    
+		    <input type="text" class="form-control" th:field="*{lastName}">		    
+		  </div>
+		  
+		  
+		  
+		   <div class="mb-3">
+		    <label for="name" class="form-label">Cellphone</label>		    
+		    <input type="text" class="form-control" th:field="*{cellphone}">		    
+		  </div>
+		  
+		  
+		   <div class="mb-3">
+		    <label for="name" class="form-label">Email</label>		    
+		    <input type="text" class="form-control" th:field="*{email}">		    
+		  </div>
+	  
+	  
+	  
+	  		   <div class="mb-3">
+		    <label for="name" class="form-label">Password</label>		    
+		    <input type="text" class="form-control" th:field="*{password}">		    
+		  </div>
+	  
+	  
+	  
+	  
+	  <button type="submit" class="btn btn-success">Update</button>
+	</form>
+  </div>
+</div>
+	
+<a th:href="@{'/customers'}" class="btn btn-primary"><i class="fas fa-plus-square"></i> Return</a>
+
+   <script th:src="@{js/bootstrap.bundle.min.js}" ></script>
+ </body>
+</html>

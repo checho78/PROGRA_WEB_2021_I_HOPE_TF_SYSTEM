@@ -9,54 +9,60 @@
     <title>New Card item</title>
   </head>
   <body>
-  
-<header th:replace="layout/layout :: header"></header>
-	
-    	<section style="padding: 30px;"> 
     <h1>New Card Item</h1>
 	
 	<div class="card" style="width: 20rem;">
 	  <div class="card-body">
 	    
 	    <form th:action="@{/cards/savenew}" th:object="${cardNew}" method="post">
+		  
 		  <div class="mb-3">
 		    <label for="name" class="form-label">Num Card</label>		    
-		    <input type="text" class="form-control" th:field="*{numCard}" aria-describedby="nameHelp">		    
-		    <div id="nameHelp" class="form-text">Register the numer  of the card.</div> 
+		    <input type="text" class="form-control" th:field="*{numCard}">		    
 		  </div>
 		  
 		  
-		  <div class="mb-3">
-		    <label for="name" class="form-label">Expiration Date</label>		    
-		    <input type="number" class="form-control" th:field="*{expirationDate}" aria-describedby="nameHelp">		    
-		    <div id="nameHelp" class="form-text">Register the date of expiration </div> 
+		   <div class="mb-3">
+		    <label for="name" class="form-label">Expiration Month</label>		    
+		    <input type="text" class="form-control" th:field="*{expirationMonth}">		    
 		  </div>
 		  
 		  
 		  
+		   <div class="mb-3">
+		    <label for="name" class="form-label">Expiration Year</label>		    
+		    <input type="text" class="form-control" th:field="*{expirationYear}">		    
+		  </div>
 		  
-		  <div class="mb-3">
+		  
+		   <div class="mb-3">
 		    <label for="name" class="form-label">CVV</label>		    
-		    <input type="text" class="form-control" th:field="*{cvv}" aria-describedby="nameHelp">		    
-		    <div id="nameHelp" class="form-text">Register the CVV.</div> 
+		    <input type="text" class="form-control" th:field="*{cvv}">		    
 		  </div>
 		  
 		  
 	
+		  <div class="mb-3 row">
+		    <label for="customer" class="col-sm-4 col-form-label">Customer :</label>
+		    <div class="col-sm-8">
+		      	
+		      	<select th:field="*{customer}" class="form-select" aria-label="Default select example">
+				  <option th:each="customer : ${customers}"
+				  		th:value="${customer.idCustomer}"
+				  		th:text="${customer.firstName}" ></option>
+				</select>
+		    </div>
+		  </div>
+		  
+		 
+		  
 		  <button type="submit" class="btn btn-success">Save</button>
 		</form>
 	  </div>
 	</div>
 		
-	
- <a th:href="@{/pay}" class="btn btn-warning"><i
-				class="fas fa-plus-square"></i> Save and Return to Cart</a>
-	</section>	
-	
+	<a th:href="@{'/cards'}" class="btn btn-primary"><i class="fas fa-plus-square"></i> Return</a>
 
-	<footer th:replace="layout/layout :: footer_hope"></footer>
-	
-	
     <script th:src="@{js/bootstrap.bundle.min.js}" ></script>
   </body>
 </html>

@@ -8,15 +8,17 @@ import pe.edu.upc.hope.model.entity.Card;
 import pe.edu.upc.hope.model.repository.CardRepository;
 import pe.edu.upc.hope.service.CardService;
 
-@Service
-public class CardServiceImpl implements CardService{
 
+@Service
+public class CardServiceImpl  implements CardService {
+
+	
 	@Autowired
-	private CardRepository cardRepository;
+	private CardRepository  cardRepository;
+	
 	
 	@Override
 	public JpaRepository<Card, Integer> getRepository() {
-	
 		return cardRepository;
 	}
 

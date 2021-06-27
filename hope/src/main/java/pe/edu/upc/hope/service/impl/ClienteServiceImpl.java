@@ -15,12 +15,12 @@ public class ClienteServiceImpl  implements ClienteService {
 
 	
 	@Autowired
-	private ClienteRepository  tarjetaRepository;
+	private ClienteRepository  clienteRepository;
 	
 	
 	@Override
 	public JpaRepository<Cliente, Integer> getRepository() {
-		return tarjetaRepository;
+		return clienteRepository;
 	}
 
 }

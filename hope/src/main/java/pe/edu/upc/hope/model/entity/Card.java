@@ -1,138 +1,98 @@
 package pe.edu.upc.hope.model.entity;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.Id;   
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-
-
 @Entity
-@Table(name = "Cards")
+@Table(name = "cards")
 public class Card {
+ 
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idCard;
+	@Column(name = "id_card")
+    private Integer  idCard;
  
-    @Column(name = "numCard", length = 30, nullable = false)
+    @Column(name = "num_card", length = 16, nullable = false)
     private String numCard;
     
-    @Column(name = "expirationDate", nullable = false)
-    private int expirationDate; 
+    @Column(name = "expiration_month", nullable = false)
+    private int expirationMonth; 
+    
+    @Column(name = "expiration_year", nullable = false)
+    private int expirationYear; 
 
     @Column(name = "cvv", length = 3  ,nullable = false)
     private String cvv;
+   
     
- 
-    @OneToMany(mappedBy = "card", fetch = FetchType.LAZY)
-	private List<Reservation> reservation;
-
-    
-    @ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "idCustomer", nullable = true)
-	private Customer  customer;
-
-
-	//===== setters and getters and constructor 
+    @ManyToOne
+	@JoinColumn(name = "customer_id", nullable = true)
+	private Customer customer;
+	
 	
     
-	public Card(int idCard, String numCard, int expirationDate, String cvv, Customer customer) {
-		super();
-		this.idCard = idCard;
-		this.numCard = numCard;
-		this.expirationDate = expirationDate;
-		this.cvv = cvv;
-		this.customer = customer; 
-	}
-
+	// -- Constructor, Getter y Setter
+    
 
 
 	public Card() {
-		reservation  = new ArrayList<Reservation>();
+		super();
+		// TODO Auto-generated constructor stub
 	}
-
-
-
-	public int getIdCard() {
-		return idCard;
-	}
-
-
-
-
-	public void setIdCard(int idCard) {
-		this.idCard = idCard;
-	}
-
-
-
-
-	public String getNumCard() {
-		return numCard;
-	}
-
-
-
-
-	public void setNumCard(String numCard) {
-		this.numCard = numCard;
-	}
-
-
-
-
-	public int getExpirationDate() {
-		return expirationDate;
-	}
-
-
-
-
-	public void setExpirationDate(int expirationDate) {
-		this.expirationDate = expirationDate;
-	}
-
-
-
-
-	public String getCvv() {
-		return cvv;
-	}
-
-
-
-
-	public void setCvv(String cvv) {
-		this.cvv = cvv;
-	}
-
-
-
 
 	public Customer getCustomer() {
 		return customer;
 	}
 
-
-
-
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
+
+	public Integer getIdCard() {
+		return idCard;
+	}
+
+	public void setIdCard(Integer idCard) {
+		this.idCard = idCard;
+	}
+
+	public String getNumCard() {
+		return numCard;
+	}
+
+	public void setNumCard(String numCard) {
+		this.numCard = numCard;
+	}
+
+	public int getExpirationMonth() {
+		return expirationMonth;
+	}
+
+	public void setExpirationMonth(int expirationMonth) {
+		this.expirationMonth = expirationMonth;
+	}
+
+	public int getExpirationYear() {
+		return expirationYear;
+	}
+
+	public void setExpirationYear(int expirationYear) {
+		this.expirationYear = expirationYear;
+	}
+
+	public String getCvv() {
+		return cvv;
+	}
+
+	public void setCvv(String cvv) {
+		this.cvv = cvv;
+	}
     
-
-
 }
-
-
-
-
