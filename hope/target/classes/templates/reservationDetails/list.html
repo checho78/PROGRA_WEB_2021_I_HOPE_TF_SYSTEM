@@ -30,13 +30,13 @@
 						<td th:text="${reservationDetail.reservation.id}"></td>
 						<td th:text="${reservationDetail.product.id}"></td>
 
-						<td><a th:href="@{'/reservationDetails/' + ${tarjeta.idTarjeta}}"
+						<td><a th:href="@{'/reservationDetails/' + ${reservationDetail.id}}"
 							class="btn btn-info"><i class="fas fa-eye"></i></a></td>
 						<td><a
-							th:href="@{'/reservationDetails/' + ${tarjeta.idTarjeta} + '/edit'}"
+							th:href="@{'/reservationDetails/' + ${reservationDetail.id} + '/edit'}"
 							class="btn btn-warning"><i class="fas fa-edit"></i></a></td>
 						<td><a
-							th:href="@{'/reservationDetails/' + ${tarjeta.idTarjeta} + '/del'}"
+							th:href="@{'/reservationDetails/' + ${reservationDetail.id} + '/del'}"
 							class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>
 
 					</tr>
