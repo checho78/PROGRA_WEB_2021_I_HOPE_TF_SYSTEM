@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head(~{::title})">
+	<title>HR - Pharmacies edit </title>
+</head>
+ <body>
+ 	<header th:replace="layout/layout :: header"></header>
+   <h1>Editing Pharmacy Item</h1>
+
+<div class="card" style="width: 20rem;">
+  <div class="card-body">
+    
+    <form th:action="@{/pharmacies/saveedit}" th:object="${pharmacyEdit}" method="post">
+	
+	
+	  <div class="mb-3">
+		    <label for="name" class="form-label">Name</label>		    
+		    <input type="text" class="form-control" th:field="*{name}">		    
+		  </div>
+		  
+		  
+		   <div class="mb-3">
+		    <label for="name" class="form-label">Adress</label>		    
+		    <input type="text" class="form-control" th:field="*{adress}">		    
+		  </div>
+		  
+		  
+		  
+		   <div class="mb-3">
+		    <label for="name" class="form-label">District</label>		    
+		    <input type="text" class="form-control" th:field="*{district}">		    
+		  </div>
+		  
+		  		  
+		   <div class="mb-3">
+		    <label for="name" class="form-label">Password</label>		    
+		    <input type="text" class="form-control" th:field="*{password}">		    
+		  </div>
+		  
+		  
+		   <div class="mb-3">
+		    <label for="name" class="form-label">Description</label>		    
+		    <input type="text" class="form-control" th:field="*{description}">		    
+		  </div>
+	  
+	  
+	  
+	  		   <div class="mb-3">
+		    <label for="name" class="form-label">Start Hour</label>		    
+		    <input type="text" class="form-control" th:field="*{startHour}">		    
+		  </div>
+	  
+	  
+	   <div class="mb-3">
+		    <label for="name" class="form-label">End Hour</label>		    
+		    <input type="text" class="form-control" th:field="*{endHour}">		    
+		  </div>
+		  
+		    <div class="mb-3">
+		    <label for="name" class="form-label">Ruc</label>		    
+		    <input type="text" class="form-control" th:field="*{ruc}">		    
+		  </div>
+	  
+	  
+	  
+	  <button type="submit" class="btn btn-success">Update</button>
+	</form>
+  </div>
+</div>
+	
+<a th:href="@{'/pharmacies'}" class="btn btn-primary"><i class="fas fa-plus-square"></i> Return</a>
+
+   <script th:src="@{js/bootstrap.bundle.min.js}" ></script>
+ </body>
+</html>

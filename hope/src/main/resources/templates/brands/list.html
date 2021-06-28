@@ -5,7 +5,6 @@
 </head>
 <body>
 	<header th:replace="layout/layout :: header"></header>
-    	<section style="padding: 30px;"> 	
 	<h1>Brand List</h1>
 
 	<div class="card text-center" style="width: 40rem;">
@@ -16,37 +15,38 @@
 					<tr>
 						<th scope="col">#</th>
 						<th scope="col" style="width: 25rem;">Name</th>
+					
 						<th scope="col"></th>
-
+						<th scope="col"></th>
+						<th scope="col"></th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="brand : ${brands}"> 
-						<th scope="row" th:text="${brand.idBrand}"> 1</th>
-						<td th:text="${card.numCard}">1234</td>
+					<tr th:each="brand : ${brands}">
+						<th scope="row" th:text="${brand.id}"></th>
+						<td th:text="${brand.name}"></td>
 
-
+						
 						<td><a th:href="@{'/brands/' + ${brand.id}}"
 							class="btn btn-info"><i class="fas fa-eye"></i></a></td>
-						<td><a th:href="@{'/brands/' + ${brand.id} + '/edit'}"
+						<td><a
+							th:href="@{'/brands/' + ${brand.id} + '/edit'}"
 							class="btn btn-warning"><i class="fas fa-edit"></i></a></td>
-						<td><a th:href="@{'/brands/' + ${brand.id} + '/del'}"
+						<td><a
+							th:href="@{'/brands/' + ${brand.id} + '/del'}"
 							class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>
 					</tr>
 				</tbody>
 			</table>
 
 		</div>
-		<div class="brand-footer text-muted">
-			<a th:href="@{'/Brand/new'}" class="btn btn-primary"><i
+		<div class="card-footer text-muted">
+			<a th:href="@{'/brands/new'}" class="btn btn-primary"><i
 				class="fas fa-plus-square"></i> New Brand</a>
 		</div>
 	</div>
-	
-	</section>	
-	
+
 	<footer th:replace="layout/layout :: footer_hope"></footer>
-		
 
 	<script th:src="@{js/bootstrap.bundle.min.js}"></script>
 </body>

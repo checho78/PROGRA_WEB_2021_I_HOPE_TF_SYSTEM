@@ -36,10 +36,10 @@ public class Pharmacy{
     private String description;
 
     @Column(name = "start_hour")
-    private Integer startHour;
+    private int startHour;
 
     @Column(name = "end_hour")
-    private Integer endHour;
+    private int endHour;
 
     @Column(name = "ruc", length = 100 , nullable= false)
     private Long ruc;
