@@ -1,4 +1,7 @@
+
+
 package pe.edu.upc.hope.controller;
+
 
 import java.util.List;
 import java.util.Optional;
@@ -16,26 +19,42 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import pe.edu.upc.hope.model.entity.ReservationDetail;
 import pe.edu.upc.hope.service.ReservationDetailService;
 
+import pe.edu.upc.hope.model.entity.Reservation;
+import pe.edu.upc.hope.service.ReservationService;
+
+
+import pe.edu.upc.hope.model.entity.Product;
+import pe.edu.upc.hope.service.ProductService;
+
 @Controller
-@RequestMapping("/reservationDetails")  //GET y POST
-@SessionAttributes("reservationDetailsEdit")
-
+@RequestMapping("/reservationDetails")	// GET y POST
+@SessionAttributes("reservationDetailEdit")
 public class ReservationDetailController {
-
-	@Autowired
-	private ReservationDetailService reservationDetailService;
 	
-	@GetMapping
+	@Autowired
+	private ReservationDetailService reservationDetailService; 
+	
+	@Autowired
+	private ReservationService reservationService; 
+	
+	@Autowired
+	private ProductService productService; 
+	
+	
+	@GetMapping		// GET: /reservationDetail
 	public String list(Model model) {
 		try {
 			List<ReservationDetail> reservationDetails = reservationDetailService.getAll();
+			 
 			model.addAttribute("reservationDetails", reservationDetails);
+		 	
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.err.println(e.getMessage());
 		}
 		return "reservationDetails/list";
 	}
+	
 	@GetMapping("{id}")		// GET: /reservationDetail/{id}
 	public String findById(Model model, @PathVariable("id") Integer id) {
 		try {
@@ -66,7 +85,7 @@ public class ReservationDetailController {
 		return "redirect:/reservationDetails";
 	}
 
-	@PostMapping("saveedit")	// POST: /reservationDetails/saveedit
+	@PostMapping("saveedit")	// POST: /reservationDetail/saveedit
 	public String saveEdit(Model model, @ModelAttribute("reservationDetailEdit") ReservationDetail reservationDetail) {		
 		try {
 			reservationDetailService.update(reservationDetail);
@@ -77,10 +96,23 @@ public class ReservationDetailController {
 		return "redirect:/reservationDetails";
 	}	
 	// -----------------New----------------------
-	@GetMapping("new")	// GET: /reservationDetails/new
+	@GetMapping("new")	// GET: /reservationDetail/new
 	public String newreservationDetail(Model model) {
-		ReservationDetail reservationDetail = new ReservationDetail();
-		model.addAttribute("reservationDetailNew", reservationDetail);
+		
+		try {
+			ReservationDetail reservationDetail = new ReservationDetail();
+			List<Reservation> reservations = reservationService.getAll();
+			List<Product> products = productService.getAll();
+			
+			model.addAttribute("reservationDetailNew", reservationDetail);
+			model.addAttribute("reservations", reservations);
+			model.addAttribute("products", products);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.err.println(e.getMessage());
+		}
+
 		return "reservationDetails/new";
 	}
 	@PostMapping("savenew")	// POST: /reservationDetail/savenew
@@ -107,5 +139,15 @@ public class ReservationDetailController {
 		}
 		return "redirect:/reservationDetails";
 	}
-
+	
 }
+
+
+
+
+
+
+
+
+
+

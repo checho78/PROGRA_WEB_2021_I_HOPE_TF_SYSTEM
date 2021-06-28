@@ -1,6 +1,9 @@
 package pe.edu.upc.hope.model.entity;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -9,7 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -38,17 +41,21 @@ public class Reservation {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "id_card", nullable = false)
 	private Card card;
+	
+	@OneToMany(mappedBy = "reservation", fetch = FetchType.LAZY)
+	private List<ReservationDetail> reservationdetails;
 
 	//========================= setters and getters and constructores 
 	
 	public Reservation() {
-		super();
-		// TODO Auto-generated constructor stub
+		reservationdetails= new ArrayList<ReservationDetail> ();
 	}
 	
 	
 	
 	
+
+
 	public Reservation(Integer id, String description, String price, String commission, String startDate,
 			String endDate, Card card) {
 		super();
@@ -119,5 +126,19 @@ public class Reservation {
 	public void setCard(Card card) {
 		this.card = card;
 	}
+	
+
+	public List<ReservationDetail> getReservationdetails() {
+		return reservationdetails;
+	}
+
+
+
+
+	public void setReservationdetails(List<ReservationDetail> reservationdetails) {
+		this.reservationdetails = reservationdetails;
+	}
+
+
 	
 }

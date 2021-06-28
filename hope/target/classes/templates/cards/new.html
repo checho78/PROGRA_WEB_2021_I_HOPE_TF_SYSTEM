@@ -48,7 +48,7 @@
 		      	
 		      	<select th:field="*{customer}" class="form-select" aria-label="Default select example">
 				  <option th:each="customer : ${customers}"
-				  		th:value="${customer.idCustomer}"
+				  		th:value="${customer.id}"
 				  		th:text="${customer.firstName}" ></option>
 				</select>
 		    </div>

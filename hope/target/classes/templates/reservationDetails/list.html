@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head(~{::title})">
+<title>HR - ReservationDetails</title>
+</head>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+	<h1>ReservationDetail List</h1>
+
+	<div class="card text-center" style="width: 40rem;">
+		<div class="card-header">ReservationDetail management</div>
+		<div class="card-body">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col" style="width: 25rem;">Reserva</th>
+						<th scope="col" style="width: 25rem;">Producto</th>
+
+						<th scope="col"></th>
+						<th scope="col"></th>
+						<th scope="col"></th>
+					</tr>
+				</thead>
+				<tbody>
+
+
+					<tr th:each="reservationDetail : ${reservationDetails}">
+
+						<td th:text="${reservationDetail.reservation.id}"></td>
+						<td th:text="${reservationDetail.product.id}"></td>
+
+						<td><a th:href="@{'/reservationDetails/' + ${tarjeta.idTarjeta}}"
+							class="btn btn-info"><i class="fas fa-eye"></i></a></td>
+						<td><a
+							th:href="@{'/reservationDetails/' + ${tarjeta.idTarjeta} + '/edit'}"
+							class="btn btn-warning"><i class="fas fa-edit"></i></a></td>
+						<td><a
+							th:href="@{'/reservationDetails/' + ${tarjeta.idTarjeta} + '/del'}"
+							class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>
+
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+		<div class="card-footer text-muted">
+			<a th:href="@{'/reservationDetails/new'}" class="btn btn-primary"><i
+				class="fas fa-plus-square"></i> New ReservationDetail</a>
+		</div>
+	</div>
+
+	<footer th:replace="layout/layout :: footer_hope"></footer>
+
+	<script th:src="@{js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>

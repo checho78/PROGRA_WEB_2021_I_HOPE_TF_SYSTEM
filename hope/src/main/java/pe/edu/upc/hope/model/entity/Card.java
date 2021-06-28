@@ -1,12 +1,16 @@
 package pe.edu.upc.hope.model.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -22,9 +26,11 @@ public class Card {
     @Column(name = "num_card", length = 16, nullable = false)
     private String numCard;
     
-    @Column(name = "expiration_date", nullable = false)
-    private String expirationDate; 
-    
+    @Column(name = "expiration_month", nullable = false)
+    private String expirationMonth; 
+
+    @Column(name = "expiration_year", nullable = false)
+    private String expirationYear; 
 
     @Column(name = "cvv", length = 3  ,nullable = false)
     private String cvv;
@@ -34,6 +40,8 @@ public class Card {
 	@JoinColumn(name = "id_customer", nullable = true)
 	private Customer customer;
 	
+    @OneToMany(mappedBy = "card", fetch = FetchType.LAZY)
+	private List<Reservation> reservations;
 	
     
 	// -- Constructor, Getter y Setter
@@ -69,12 +77,22 @@ public class Card {
 		this.numCard = numCard;
 	}
 
-	public String getExpirationDate() {
-		return expirationDate;
+	
+
+	public String getExpirationMonth() {
+		return expirationMonth;
 	}
 
-	public void setExpirationDate(String expirationDate) {
-		this.expirationDate = expirationDate;
+	public void setExpirationMonth(String expirationMonth) {
+		this.expirationMonth = expirationMonth;
+	}
+
+	public String getExpirationYear() {
+		return expirationYear;
+	}
+
+	public void setExpirationYear(String expirationYear) {
+		this.expirationYear = expirationYear;
 	}
 
 	public String getCvv() {
@@ -84,5 +102,14 @@ public class Card {
 	public void setCvv(String cvv) {
 		this.cvv = cvv;
 	}
+
+	public List<Reservation> getReservations() {
+		return reservations;
+	}
+
+	public void setReservations(List<Reservation> reservations) {
+		this.reservations = reservations;
+	}
     
+	
 }

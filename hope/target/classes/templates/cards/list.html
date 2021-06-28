@@ -28,21 +28,21 @@
 				
 				
 					<tr th:each="card : ${cards}">
-						<th scope="row" th:text="${card.idCard}"></th>
+						<th scope="row" th:text="${card.id}"></th>
 						<td th:text="${card.numCard}"></td>
 
 						<td th:text="${card.expirationMonth}"></td>
 						<td th:text="${card.expirationYear}"></td>
 						<td th:text="${card.cvv}"></td>
-							<td th:text="${card.customer.idCustomer}"></td>
+							<td th:text="${card.customer.id}"></td>
 
-						<td><a th:href="@{'/cards/' + ${card.idCard}}"
+						<td><a th:href="@{'/cards/' + ${card.id}}"
 							class="btn btn-info"><i class="fas fa-eye"></i></a></td>
 						<td><a
-							th:href="@{'/cards/' + ${card.idCard} + '/edit'}"
+							th:href="@{'/cards/' + ${card.id} + '/edit'}"
 							class="btn btn-warning"><i class="fas fa-edit"></i></a></td>
 						<td><a
-							th:href="@{'/cards/' + ${card.idCard} + '/del'}"
+							th:href="@{'/cards/' + ${card.id} + '/del'}"
 							class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>
 						
 					</tr>

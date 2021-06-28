@@ -17,7 +17,7 @@ public class ReservationDetail {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_reservation_detail")
-    private Integer  idReservationDetail;
+    private Integer  id;
 	
 	  @ManyToOne(fetch = FetchType.LAZY)
 		@JoinColumn(name = "id_reservation", nullable = false)
@@ -41,9 +41,9 @@ public class ReservationDetail {
 
 
 
-		public ReservationDetail(Integer idReservationDetail, Reservation reservation, Product product) {
+		public ReservationDetail(Integer id, Reservation reservation, Product product) {
 			super();
-			this.idReservationDetail = idReservationDetail;
+			this.id = id;
 			this.reservation = reservation;
 			this.product = product;
 		}
@@ -52,14 +52,14 @@ public class ReservationDetail {
 
 
 		public Integer getIdReservationDetail() {
-			return idReservationDetail;
+			return id;
 		}
 
 
 
 
-		public void setIdReservationDetail(Integer idReservationDetail) {
-			this.idReservationDetail = idReservationDetail;
+		public void setIdReservationDetail(Integer id) {
+			this.id = id;
 		}
 
 

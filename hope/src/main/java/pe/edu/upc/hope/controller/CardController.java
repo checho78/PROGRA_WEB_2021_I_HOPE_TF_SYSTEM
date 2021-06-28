@@ -34,6 +34,7 @@ public class CardController {
 	private CustomerService customerService; 
 	
 	
+	
 	@GetMapping		// GET: /card
 	public String list(Model model) {
 		try {
