@@ -22,18 +22,16 @@ public class Card {
     @Column(name = "num_card", length = 16, nullable = false)
     private String numCard;
     
-    @Column(name = "expiration_month", nullable = false)
-    private int expirationMonth; 
+    @Column(name = "expiration_date", nullable = false)
+    private String expirationDate; 
     
-    @Column(name = "expiration_year", nullable = false)
-    private int expirationYear; 
 
     @Column(name = "cvv", length = 3  ,nullable = false)
     private String cvv;
    
     
     @ManyToOne
-	@JoinColumn(name = "customer_id", nullable = true)
+	@JoinColumn(name = "id_customer", nullable = true)
 	private Customer customer;
 	
 	
@@ -71,20 +69,12 @@ public class Card {
 		this.numCard = numCard;
 	}
 
-	public int getExpirationMonth() {
-		return expirationMonth;
+	public String getExpirationDate() {
+		return expirationDate;
 	}
 
-	public void setExpirationMonth(int expirationMonth) {
-		this.expirationMonth = expirationMonth;
-	}
-
-	public int getExpirationYear() {
-		return expirationYear;
-	}
-
-	public void setExpirationYear(int expirationYear) {
-		this.expirationYear = expirationYear;
+	public void setExpirationDate(String expirationDate) {
+		this.expirationDate = expirationDate;
 	}
 
 	public String getCvv() {

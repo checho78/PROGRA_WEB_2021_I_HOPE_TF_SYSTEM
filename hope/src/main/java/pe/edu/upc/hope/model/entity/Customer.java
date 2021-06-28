@@ -37,6 +37,9 @@ public class Customer {
 	@Column(name = "email", length = 40, nullable = false)
 	private String email;
 	
+	@Column(name = "dni", length = 40, nullable = false)
+	private String dni;
+	
 	@Column(name = "password", length = 20, nullable = false)
 	private String password;
 
@@ -108,6 +111,15 @@ public class Customer {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	public String getDni() {
+		return dni;
+	}
+
+
+	public void setDni(String dni) {
+		this.dni = dni;
 	}
 
 	public String getPassword() {

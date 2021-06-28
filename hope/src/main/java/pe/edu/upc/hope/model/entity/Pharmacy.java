@@ -17,7 +17,7 @@ import javax.persistence.Table;
 public class Pharmacy{
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name="idPharmacy")
+    @Column(name="id_pharmacy")
     private Integer idPharmacy;
 
     @Column(name = "name", length = 50, nullable = false)
@@ -35,11 +35,11 @@ public class Pharmacy{
     @Column(name = "description", length = 100, nullable = false)
     private String description;
 
-    @Column(name = "startHour")
-    private int startHour;
+    @Column(name = "start_hour")
+    private Integer startHour;
 
-    @Column(name = "endHour")
-    private int endHour;
+    @Column(name = "end_hour")
+    private Integer endHour;
 
     @Column(name = "ruc", length = 100 , nullable= false)
     private Long ruc;
@@ -55,7 +55,7 @@ public class Pharmacy{
 	}
 
 	public Pharmacy(Integer idPharmacy, String name, String address, String district, String password,
-			String description, int startHour, int endHour, Long ruc) {
+			String description, Integer startHour, Integer endHour, Long ruc) {
 		super();
 		this.idPharmacy = idPharmacy;
 		this.name = name;
@@ -121,7 +121,7 @@ public class Pharmacy{
 		return startHour;
 	}
 
-	public void setStartHour(int startHour) {
+	public void setStartHour(Integer startHour) {
 		this.startHour = startHour;
 	}
 
@@ -129,7 +129,7 @@ public class Pharmacy{
 		return endHour;
 	}
 
-	public void setEndHour(int endHour) {
+	public void setEndHour(Integer endHour) {
 		this.endHour = endHour;
 	}
 

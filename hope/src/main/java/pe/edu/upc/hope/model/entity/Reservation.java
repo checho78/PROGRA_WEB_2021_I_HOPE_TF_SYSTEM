@@ -17,8 +17,8 @@ import javax.persistence.Table;
 public class Reservation {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idReservation")
-	private int idReservation;
+	@Column(name = "id_reservation")
+	private Integer idReservation;
 
 	@Column(name = "description", length = 50, nullable = false)
 	private String description;
@@ -29,14 +29,14 @@ public class Reservation {
 	@Column(name = "commission", length = 50, nullable = false)
 	private String commission;
 
-	@Column(name = "startDate", nullable = false)
-	private int startDate;
+	@Column(name = "start_date", nullable = false)
+	private String startDate;
 
-	@Column(name = "endDate", nullable = false)
-	private int endDate;
+	@Column(name = "end_date", nullable = false)
+	private String endDate;
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "idCard", nullable = false)
+	@JoinColumn(name = "id_card", nullable = false)
 	private Card card;
 
 	//========================= setters and getters and constructores 
@@ -49,8 +49,8 @@ public class Reservation {
 	
 	
 	
-	public Reservation(int idReservation, String description, String price, String commission, int startDate,
-			int endDate, Card card) {
+	public Reservation(Integer idReservation, String description, String price, String commission, String startDate,
+			String endDate, Card card) {
 		super();
 		this.idReservation = idReservation;
 		this.description = description;
@@ -64,13 +64,11 @@ public class Reservation {
 
 
 
-	public int getIdReservation() {
+	public Integer getIdReservation() {
 		return idReservation;
 	}
 
-
-
-	public void setIdReservation(int idReservation) {
+	public void setIdReservation(Integer idReservation) {
 		this.idReservation = idReservation;
 	}
 
@@ -98,19 +96,19 @@ public class Reservation {
 		this.commission = commission;
 	}
 
-	public int getStartDate() {
+	public String getStartDate() {
 		return startDate;
 	}
 
-	public void setStartDate(int startDate) {
+	public void setStartDate(String startDate) {
 		this.startDate = startDate;
 	}
 
-	public int getEndDate() {
+	public String getEndDate() {
 		return endDate;
 	}
 
-	public void setEndDate(int endDate) {
+	public void setEndDate(String endDate) {
 		this.endDate = endDate;
 	}
 

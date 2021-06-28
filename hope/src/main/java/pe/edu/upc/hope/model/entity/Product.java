@@ -19,7 +19,7 @@ import javax.persistence.Table;
 public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idProduct")
+	@Column(name = "id_product")
 	private Integer idProduct;
 	
 	@Column(name = "name", length = 30)
@@ -31,21 +31,19 @@ public class Product {
 	@Column(name = "description", length = 100)
 	private String description;
 	
-
-
 	
 	  @ManyToOne(fetch = FetchType.LAZY)
-			@JoinColumn(name = "idBrand", nullable = false)
+			@JoinColumn(name = "id_brand", nullable = false)
 		private Brand brand;
 	  
 	  
 	  @ManyToOne(fetch = FetchType.LAZY)
-		@JoinColumn(name = "idCategory", nullable = false)
+		@JoinColumn(name = "id_category", nullable = false)
 	  private Category category;
 	  
 	
 	  @ManyToOne(fetch = FetchType.LAZY)
-		@JoinColumn(name = "idPharmacy", nullable = false)
+		@JoinColumn(name = "id_pharmacy", nullable = false)
 	  private Pharmacy pharmacy;
 
 
