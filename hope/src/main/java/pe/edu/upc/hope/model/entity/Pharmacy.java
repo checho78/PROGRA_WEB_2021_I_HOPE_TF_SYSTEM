@@ -18,7 +18,7 @@ public class Pharmacy{
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="id_pharmacy")
-    private Integer idPharmacy;
+    private Integer id;
 
     @Column(name = "name", length = 50, nullable = false)
     private String name;
@@ -54,10 +54,10 @@ public class Pharmacy{
 		products  = new ArrayList<Product>();
 	}
 
-	public Pharmacy(Integer idPharmacy, String name, String address, String district, String password,
+	public Pharmacy(Integer id, String name, String address, String district, String password,
 			String description, Integer startHour, Integer endHour, Long ruc) {
 		super();
-		this.idPharmacy = idPharmacy;
+		this.id = id;
 		this.name = name;
 		this.address = address;
 		this.district = district;
@@ -69,12 +69,12 @@ public class Pharmacy{
 	 
 	}
 
-	public Integer getIdPharmacy() {
-		return idPharmacy;
+	public Integer getId() {
+		return id;
 	}
 
-	public void setIdPharmacy(Integer idPharmacy) {
-		this.idPharmacy = idPharmacy;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getName() {

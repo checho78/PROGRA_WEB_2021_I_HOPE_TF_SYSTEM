@@ -14,9 +14,10 @@
 				<thead>
 					<tr>
 						<th scope="col">#</th>
-						<th scope="col" style="width: 25rem;">FIrst Name</th>
+						<th scope="col" style="width: 25rem;">First Name</th>
 						<th scope="col" style="width: 25rem;">Last Name</th>
 						<th scope="col" style="width: 25rem;">Cellphone</th>
+						<th scope="col" style="width: 25rem;">Dni</th>
 						<th scope="col" style="width: 25rem;">Email</th>
 						<th scope="col" style="width: 25rem;">Password</th>
 						<th scope="col"></th>
@@ -27,21 +28,22 @@
 				<tbody>
 					<tr th:each="customer : ${customers}">
 						
-						<th scope="row" th:text="${customer.idCustomer}"></th>
+						<th scope="row" th:text="${customer.id}"></th>
 					
 						<td th:text="${customer.firstName}"></td>
 						<td th:text="${customer.lastName}"></td>
 						<td th:text="${customer.cellphone}"></td>
+						<td th:text="${customer.dni}"></td>
 						<td th:text="${customer.email}"></td>
 						<td th:text="${customer.password}"></td>
 
-						<td><a th:href="@{'/customers/' + ${customer.idCustomer}}"
+						<td><a th:href="@{'/customers/' + ${customer.id}}"
 							class="btn btn-info"><i class="fas fa-eye"></i></a></td>
 						<td><a
-							th:href="@{'/customers/' + ${customer.idCustomer} + '/edit'}"
+							th:href="@{'/customers/' + ${customer.id} + '/edit'}"
 							class="btn btn-warning"><i class="fas fa-edit"></i></a></td>
 						<td><a
-							th:href="@{'/customers/' + ${customer.idCustomer} + '/del'}"
+							th:href="@{'/customers/' + ${customer.id} + '/del'}"
 							class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>
 					</tr>
 				</tbody>

@@ -20,7 +20,7 @@ public class Brand {
 	 @Id
 	 @GeneratedValue(strategy= GenerationType.IDENTITY)
 	 @Column(name="id_brand")
-	    private Integer idBrand;
+	    private Integer id;
 	 
     @Column(name = "name", length = 30)
     private String name;
@@ -37,22 +37,22 @@ public class Brand {
 
     
     
-	public Brand( String name, List<Product> products, Integer idBrand) {
+	public Brand( String name, List<Product> products, Integer id) {
 		super();
-		this.idBrand = idBrand;
+		this.id = id;
 		this.name = name;
 		this.products = products;
 	}
 
 
 
-	public Integer getIdBrand() {
-		return idBrand;
+	public Integer getId() {
+		return id;
 	}
 
 
-	public void setIdBrand(Integer idBrand) {
-		this.idBrand = idBrand;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getName() {

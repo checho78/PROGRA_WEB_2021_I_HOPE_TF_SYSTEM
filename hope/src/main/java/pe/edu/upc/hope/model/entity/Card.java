@@ -17,7 +17,7 @@ public class Card {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_card")
-    private Integer  idCard;
+    private Integer  id;
  
     @Column(name = "num_card", length = 16, nullable = false)
     private String numCard;
@@ -53,12 +53,12 @@ public class Card {
 		this.customer = customer;
 	}
 
-	public Integer getIdCard() {
-		return idCard;
+	public Integer getId() {
+		return id;
 	}
 
-	public void setIdCard(Integer idCard) {
-		this.idCard = idCard;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getNumCard() {

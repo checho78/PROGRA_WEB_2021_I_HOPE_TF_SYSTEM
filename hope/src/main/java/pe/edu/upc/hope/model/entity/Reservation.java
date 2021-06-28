@@ -18,7 +18,7 @@ public class Reservation {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_reservation")
-	private Integer idReservation;
+	private Integer id;
 
 	@Column(name = "description", length = 50, nullable = false)
 	private String description;
@@ -49,10 +49,10 @@ public class Reservation {
 	
 	
 	
-	public Reservation(Integer idReservation, String description, String price, String commission, String startDate,
+	public Reservation(Integer id, String description, String price, String commission, String startDate,
 			String endDate, Card card) {
 		super();
-		this.idReservation = idReservation;
+		this.id = id;
 		this.description = description;
 		this.price = price;
 		this.commission = commission;
@@ -64,12 +64,12 @@ public class Reservation {
 
 
 
-	public Integer getIdReservation() {
-		return idReservation;
+	public Integer getId() {
+		return id;
 	}
 
-	public void setIdReservation(Integer idReservation) {
-		this.idReservation = idReservation;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getDescription() {

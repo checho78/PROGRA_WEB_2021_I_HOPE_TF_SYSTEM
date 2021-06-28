@@ -67,7 +67,7 @@ public class ReservationDetailController {
 	}
 
 	@PostMapping("saveedit")	// POST: /reservationDetails/saveedit
-	public String saveEdit(Model model, @ModelAttribute("reservationDEtailEdit") ReservationDetail reservationDetail) {		
+	public String saveEdit(Model model, @ModelAttribute("reservationDetailEdit") ReservationDetail reservationDetail) {		
 		try {
 			reservationDetailService.update(reservationDetail);
 		} catch (Exception e) {

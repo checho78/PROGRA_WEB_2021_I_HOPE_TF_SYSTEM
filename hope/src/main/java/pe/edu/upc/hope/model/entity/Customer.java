@@ -21,7 +21,7 @@ public class Customer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_customer")
-    private Integer  idCustomer; 
+    private Integer  id; 
 
 
 	@Column(name = "first_name", length = 30, nullable = false)
@@ -64,13 +64,13 @@ public class Customer {
 	}
 
 
-	public Integer getIdCustomer() {
-		return idCustomer;
+	public Integer getId() {
+		return id;
 	}
 
 
-	public void setIdCustomer(Integer idCustomer) {
-		this.idCustomer = idCustomer;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 

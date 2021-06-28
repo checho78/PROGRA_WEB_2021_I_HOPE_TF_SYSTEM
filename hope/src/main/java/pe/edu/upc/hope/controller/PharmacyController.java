@@ -70,7 +70,7 @@ public class PharmacyController {
     @PostMapping("saveedit")	// POST: /region/saveedit
     public String saveEdit(Model model, @ModelAttribute("pharmacyEdit") Pharmacy pharmacy) {
         try {
-            System.out.println(pharmacy.getIdPharmacy());
+            System.out.println(pharmacy.getId());
             System.out.println(pharmacy.getName());
             pharmacyService.update(pharmacy);
         } catch (Exception e) {
@@ -89,7 +89,7 @@ public class PharmacyController {
     @PostMapping("savenew")	// POST: /pharmacy/savenew
     public String saveNew(Model model, @ModelAttribute("pharmacyNew") Pharmacy pharmacy) {
         try {
-            System.out.println(pharmacy.getIdPharmacy());
+            System.out.println(pharmacy.getId());
             System.out.println(pharmacy.getName());
             pharmacyService.create(pharmacy);
         } catch (Exception e) {
