@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head(title)">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+<link th:href="@{/css/fontawesome.min.css}" rel="stylesheet">
+<link th:href="@{/css/solid.min.css}" rel="stylesheet">
+
+<title>View Details Products</title>
+
+
+</head>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+
+<section style="margin: 20px;">
+ 	<nav aria-label="breadcrumb">
+	  <ol class="breadcrumb">
+	    <li class="breadcrumb-item"><a th:href="@{/home}">Home</a></li>
+	    <li class="breadcrumb-item"><a th:href="@{/allProducts}">Products</a></li>
+	    <li class="breadcrumb-item active" aria-current="page">View Details Product</li>
+	  </ol>
+	</nav>
+ </section>
+
+	<section style="padding: 70px;">
+
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="images/panadol-extra.jpg" class="card-img-top" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+      <p class="card-title"><small class="text-muted">CAJA 52 UN</small></p>
+        <h4 class="card-title">Panadol Forte Tableta</h4>
+        <h5 class="card-title">S/.44.98</h5>
+        <p class="card-text">- Alivia dolores tan fuertes como la migraña.</p>
+        <p class="card-text">- R.S: EE-03884</p>
+        <p class="card-text">- Presentación: Caja</p>
+        <p class="card-text">- Cantidad: 52 UN</p>
+
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+								<a th:href="@{/shoppingCart}" class="btn btn-success">Add to Cart</a>
+
+							</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+	</section>
+
+	<footer th:replace="layout/layout :: footer_hope"></footer>
+
+	<script th:src="@{js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>

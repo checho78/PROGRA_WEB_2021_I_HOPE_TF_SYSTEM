@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head(~{::title})">
+	<title>HR - Reservations edit </title>
+</head>
+ <body>
+ 	<header th:replace="layout/layout :: header"></header>
+   <h1>Editing Reservation Item</h1>
+
+<div class="card" style="width: 20rem;">
+  <div class="card-body">
+    
+    <form th:action="@{/reservations/saveedit}" th:object="${reservationEdit}" method="post">
+	
+	
+		  <div class="mb-3">
+		    <label for="name" class="form-label">Description</label>		    
+		    <input type="text" class="form-control" th:field="*{description}">		    
+		  </div>
+		  
+		  
+		   <div class="mb-3">
+		    <label for="name" class="form-label">Price</label>		    
+		    <input type="text" class="form-control" th:field="*{price}">		    
+		  </div>
+		  
+		  
+		  
+		   <div class="mb-3">
+		    <label for="name" class="form-label">Commission</label>		    
+		    <input type="text" class="form-control" th:field="*{commission}">		    
+		  </div>
+		  
+		  		  
+		   <div class="mb-3">
+		    <label for="name" class="form-label">Start Date</label>		    
+		    <input type="text" class="form-control" th:field="*{startDate}">		    
+		  </div>
+		  
+		  
+		   <div class="mb-3">
+		    <label for="name" class="form-label">End Date</label>		    
+		    <input type="text" class="form-control" th:field="*{endDate}">		    
+		  </div>
+	  
+	  
+	  
+	  	 <div class="mb-3 row">
+		    <label for="card" class="col-sm-4 col-form-label">Card :</label>
+		    <div class="col-sm-8">
+		      	<select th:field="*{card}" class="form-select" aria-label="Default select example">
+				  <option th:each="card : ${cards}"
+				  		th:value="${card.id}"
+				  		th:text="${card.numCard}" ></option>
+				</select>
+		    </div>
+		  </div>
+	  
+	  
+	  
+	  <button type="submit" class="btn btn-success">Update</button>
+	</form>
+  </div>
+</div>
+	
+<a th:href="@{'/reservations'}" class="btn btn-primary"><i class="fas fa-plus-square"></i> Return</a>
+
+   <script th:src="@{js/bootstrap.bundle.min.js}" ></script>
+ </body>
+</html>

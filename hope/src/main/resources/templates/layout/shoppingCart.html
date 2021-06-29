@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head(title)">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+<link th:href="@{/css/fontawesome.min.css}" rel="stylesheet">
+<link th:href="@{/css/solid.min.css}" rel="stylesheet">
+
+<title>Shopping Cart</title>
+
+
+</head>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+	
+	<section style="margin: 20px;">
+		<nav aria-label="breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a th:href="@{/home}">Home</a></li>
+				<li class="breadcrumb-item"><a th:href="@{/allProducts}">Products</a></li>
+				<li class="breadcrumb-item active" aria-current="page">My Cart</li>
+			</ol>
+		</nav>
+	</section>
+	
+	
+
+
+	<section style="padding: 30px;">
+
+		<p style="color: #342c66; font-size: 20pt; font-weight: bold;"><i class="fas fa-shopping-cart"></i> My
+			Cart</p>
+
+		<div class="row row-cols-1 row-cols-md-3 g-3">
+			<div class="col">
+				<div class="card">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">
+								<i class="fas fa-cart-plus"></i> Vick Vaporub Ungüento
+							</h5>
+							<p class="card-text">
+								<small class="text-muted">Precio: S/.12.98</small>
+								<small class="text-muted">    Cantidad: 1 UN</small>
+								<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+								<button class="btn btn-danger me-md-2" type="button">X</button>
+
+							</div>
+							</p>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card">
+
+						<div class="card-body">
+							<h5 class="card-title">
+								<i class="fas fa-cart-plus"></i> Toalla Higiénica Nosotras BN
+							</h5>
+							<p class="card-text">
+								<small class="text-muted">Precio: S/.10.98</small>
+								<small class="text-muted">    Cantidad: 1 UN</small>
+								<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+								<button class="btn btn-danger me-md-2" type="button">X</button>
+
+							</div>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="card">
+
+						<div class="card-body">
+
+							<h5 class="card-title md-block">
+								<i class="fas fa-cart-plus"></i> Panadol Forte Tableta
+							</h5>
+
+							<p class="card-text">
+								<small class="text-muted">Precio: S/.44.98</small>
+								<small class="text-muted">    Cantidad: 1 UN</small>
+							<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+								<button class="btn btn-danger me-md-2" type="button">X</button>
+
+							</div>
+							</p>
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div class="d-grid gap-2 col-6 mx-auto justify-content-md-end">
+			<p style="color: #342c66; font-size: 20pt; font-weight: bold;"><i class="fas fa-money-bill-wave"></i> Total: </p>
+			<div class="d-grid gap-2 d-md-flex justify-content-md-end ">
+		
+			
+				<a th:href="@{/allProducts}" class="btn btn-primary" >Return</a>
+				
+			<a th:href="@{/pay}" class="btn btn-warning" >Pay</a>
+		</div>
+		</div>
+		
+
+	</section>
+
+
+
+
+	<footer th:replace="layout/layout :: footer_hope"></footer>
+
+	<script th:src="@{js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>

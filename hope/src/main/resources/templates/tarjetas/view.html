@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+
+<title>Tarjeta item</title>
+</head>
+<body>
+	<h1>Tarjeta Item</h1>
+
+	<p>
+		Id: <span th:text="${tarjeta.idTarjeta}"></span>, Num Tarjeta: <span
+			th:text="${tarjeta.numTarjeta}"></span>, Expiration Month: <span
+			th:text="${tarjeta.expirationMonth}"></span>, Expiration Year: <span
+			th:text="${tarjeta.expirationYear}"></span>, CVV: <span
+			th:text="${tarjeta.cvv}"></span>
+	</p>
+
+
+
+
+
+
+	<a th:href="@{'/tarjetas'}" class="btn btn-primary"><i
+		class="fas fa-plus-square"></i> Return</a>
+
+	<script th:src="@{js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>

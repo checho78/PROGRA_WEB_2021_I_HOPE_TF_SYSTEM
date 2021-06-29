@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head(title)">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+<link th:href="@{/css/fontawesome.min.css}" rel="stylesheet">
+<link th:href="@{/css/solid.min.css}" rel="stylesheet">
+
+<title>All Products</title>
+
+
+</head>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+<section style="margin: 20px;">
+ 	<nav aria-label="breadcrumb">
+	  <ol class="breadcrumb">
+	    <li class="breadcrumb-item"><a th:href="@{/home}">Home</a></li>
+	    <li class="breadcrumb-item active" aria-current="page">Products</li>
+	  </ol>
+	</nav>
+ </section>
+
+
+	<section style="padding: 30px;">
+	
+			<p style="color: #342c66; font-size: 20pt; font-weight: bold;">All Products</p>
+	
+<div class="row row-cols-1 row-cols-md-5 g-6">
+  <div class="col">
+    <div class="card">
+      <img src="images/vap.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Vick Vaporub Ungüento</h5>
+    <p class="card-text">Pote 100g</p>
+    <h5 class="card-title">S/.12.98</h5>
+
+    <a th:href="@{/viewDetails}" class="btn btn-primary">View details</a>
+    <a th:href="@{/shoppingCart}" class="btn btn-success">Add to Cart</a>
+      </div>
+    </div>
+  </div>
+  
+   <div class="col">
+    <div class="card">
+      <img src="images/toallas-femeninas.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Toalla Higiénica Nosotras BN</h5>
+    <p class="card-text"> Bolsa 10 UN</p>
+    <h5 class="card-title">S/.10.98</h5>
+    <a th:href="@{/viewDetails}" class="btn btn-primary">View details</a>
+     <a th:href="@{/shoppingCart}" class="btn btn-success">Add to Cart</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col">
+    <div class="card">
+      <img src="images/panadol-extra.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Panadol Forte Tableta</h5>
+    <p class="card-text"> Caja 52 UN</p>
+    <h5 class="card-title">S/.44.98</h5>
+    <a th:href="@{/viewDetails}" class="btn btn-primary">View details</a>
+    
+     <a th:href="@{/shoppingCart}" class="btn btn-success">Add to Cart</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col">
+    <div class="card">
+      <img src="images/shampoo.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+       <h5 class="card-title">Shampoo Johnson's Baby</h5>
+        <p class="card-text"> Frasco 400 ML</p>
+    <h5 class="card-title">S/.12.98</h5>
+    <a th:href="@{/viewDetails}" class="btn btn-primary">View details</a>
+     <a th:href="@{/shoppingCart}" class="btn btn-success">Add to Cart</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col">
+    <div class="card">
+      <img src="images/Desodorante.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Desodorante Antitranspirante</h5>
+        <p class="card-text"> Frasco 50 G</p>
+    <h5 class="card-title">S/.11.20</h5>
+    <a th:href="@{/viewDetails}" class="btn btn-primary">View details</a>
+     <a th:href="@{/shoppingCart}" class="btn btn-success">Add to Cart</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col">
+    <div class="card">
+      <img src="images/Desodorante.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+  <h5 class="card-title">Desodorante Antitranspirante</h5>
+        <p class="card-text"> Frasco 60 G</p>
+    <h5 class="card-title">S/.11.20</h5>
+    <a th:href="@{/viewDetails}" class="btn btn-primary">View details</a>
+     <a th:href="@{/shoppingCart}" class="btn btn-success">Add to Cart</a>
+      </div>
+    </div>
+  </div>
+  
+    <div class="col">
+    <div class="card">
+      <img src="images/shampoo.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Shampoo Johnson's Baby</h5>
+        <p class="card-text"> Frasco 400 ML</p>
+    <h5 class="card-title">S/.12.98</h5>
+    <a th:href="@{/viewDetails}" class="btn btn-primary">View details</a>
+     <a th:href="@{/shoppingCart}" class="btn btn-success">Add to Cart</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col">
+    <div class="card">
+      <img src="images/vap.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Vick Vaporub Ungüento</h5>
+    <p class="card-text">Pote 100g</p>
+    <h5 class="card-title">S/.12.98</h5>
+
+    <a th:href="@{/viewDetails}" class="btn btn-primary">View details</a>
+    <a th:href="@{/shoppingCart}" class="btn btn-success">Add to Cart</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col">
+    <div class="card">
+      <img src="images/toallas-femeninas.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Toalla Higiénica Nosotras BN</h5>
+    <p class="card-text"> Bolsa 10 UN</p>
+    <h5 class="card-title">S/.10.98</h5>
+    <a th:href="@{/viewDetails}" class="btn btn-primary">View details</a>
+     <a th:href="@{/shoppingCart}" class="btn btn-success">Add to Cart</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col">
+    <div class="card">
+      <img src="images/panadol-extra.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Panadol Forte Tableta</h5>
+    <p class="card-text"> Caja 52 UN</p>
+    <h5 class="card-title">S/.44.98</h5>
+    <a th:href="@{/viewDetails}" class="btn btn-primary">View details</a>
+    
+     <a th:href="@{/shoppingCart}" class="btn btn-success">Add to Cart</a>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+
+
+	</section>
+	<footer th:replace="layout/layout :: footer_hope"></footer>
+
+	<script th:src="@{js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head(~{::title})">
+<title>HR - Clientes</title>
+</head>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+	<h1>Cliente List</h1>
+
+	<div class="card text-center" style="width: 40rem;">
+		<div class="card-header">Cliente management</div>
+		<div class="card-body">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col" style="width: 25rem;">Num Card</th>
+						<th scope="col" style="width: 25rem;">Expiration Month</th>
+						<th scope="col" style="width: 25rem;">Expiration Year</th>
+						<th scope="col" style="width: 25rem;">CVV</th>
+						<th scope="col"></th>
+						<th scope="col"></th>
+						<th scope="col"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="cliente : ${clientes}">
+						<th scope="row" th:text="${cliente.idCliente}"></th>
+						<td th:text="${cliente.firstName}"></td>
+
+						<td th:text="${cliente.lastName}"></td>
+						<td th:text="${cliente.cellphone}"></td>
+						
+						<td th:text="${cliente.email}"></td>					
+						<td th:text="${cliente.password}"></td>
+						
+						<td><a th:href="@{'/clientes/' + ${cliente.idCliente}}"
+							class="btn btn-info"><i class="fas fa-eye"></i></a></td>
+						<td><a
+							th:href="@{'/clientes/' + ${cliente.idCliente} + '/edit'}"
+							class="btn btn-warning"><i class="fas fa-edit"></i></a></td>
+						<td><a
+							th:href="@{'/clientes/' + ${cliente.idCliente} + '/del'}"
+							class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+		<div class="card-footer text-muted">
+			<a th:href="@{'/clientes/new'}" class="btn btn-primary"><i
+				class="fas fa-plus-square"></i> New Cliente</a>
+		</div>
+	</div>
+
+	<footer th:replace="layout/layout :: footer_hope"></footer>
+
+	<script th:src="@{js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>

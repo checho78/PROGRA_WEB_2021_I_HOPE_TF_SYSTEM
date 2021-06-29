@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head(title)">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+<link th:href="@{/css/fontawesome.min.css}" rel="stylesheet">
+<link th:href="@{/css/solid.min.css}" rel="stylesheet">
+
+<title>My Reservations</title>
+
+
+</head>
+<body>
+	<header th:replace="layout/layout :: header"></header>
+
+<section style="padding: 30px;"> 
+    <h1>My Reservations</h1>
+	
+	<div class="card" style="width: 20rem;">
+	  <div class="card-body">
+	    
+	    <form method="post">
+		  
+		  <div class="mb-3">
+		  	<label for="name" class="form-label">Price:			S/18.50</label>
+		  	<br>
+		    <label for="name" class="form-label">Comission:			S/1.85</label>
+		    <br>
+		    <label for="name" class="form-label">Description:		Aspirina, Jarabe de la tos, Shampoo</label>
+		    <br>
+		    <label for="name" class="form-label">Start date: 			17/06/2021</label>
+		    <br>
+		    <label for="name" class="form-label">End date:				19/06/2021</label>		     
+		  </div>
+		    <a th:href="@{/myReservations}" class="btn btn-success">Save</a>
+		</form>
+	  </div>
+	</div>
+		
+	<a class="btn btn-primary"><i  th:href="@{/pay}" class="fas fa-plus-square"></i> Cancel</a>
+
+	</section>	
+	
+	
+	<footer th:replace="layout/layout :: footer_hope"></footer>
+
+	<script th:src="@{js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>
