@@ -1,36 +1,69 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+<head th:replace="layout/layout :: head(~{::title})">
 
-<title>Pharmacy item</title>
+<title>Pharmacy Detail</title>
+
 </head>
+
+
 <body>
-	<h1>Pharmacy Item</h1>
-
-	<p>
-		Id: <span th:text="${pharmacy.id}"></span>, Name: <span
-			th:text="${pharmacy.name}"></span>, adress: 
-			<span th:text="${pharmacy.adress}"></span>, district: 
-			<span th:text="${pharmacy.district}"></span>, password: 
-			<span th:text="${pharmacy.password}"></span>, startHour: 
-			<span th:text="${pharmacy.startHour}"></span>, endHour: 
-			<span th:text="${pharmacy.endHour}"></span>, ruc: 
-			<span th:text="${pharmacy.ruc}"></span>, description: 
-			<span th:text="${pharmacy.description}"></span>
-	</p>
+	<header th:replace="layout/layout :: header"></header>
+	
+	
+	<section style="padding: 30px;">
+	<h1>Pharmacy Detail</h1>
 
 
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+	  <ol class="breadcrumb">
+	    <li class="breadcrumb-item">Hope</li>
+	    <li class="breadcrumb-item">List Pharmacies</li>
+	    <li class="breadcrumb-item active" aria-current="page"> 
+	    	<span th:text="${pharmacy.name}"></span> 
+	    </li>
+	  </ol>
+	</nav>
 
 
+	<div class="card text-dark bg-light card border-info mb-3" style="max-width: 700px; margin-left:40px;">
+	  <div class="row g-0">
+	    <div class="col-md-6">
+	      <img th:src="@{/images/localpharmacy3.jpg}" class="img-fluid rounded-start" alt="...">
+	    </div>
+	    <div class="col-md-6">
+	      <div class="card-body">
+	        <h3 class="card-title" th:text="${pharmacy.name }">Card title</h3>
+	        <p class="card-text" >
+	        	<strong>Address:</strong> <span th:text="${pharmacy.address}"></span>
+	        </p>
+	        <p class="card-text" >
+	        	<strong>District:</strong> <span th:text="${pharmacy.district}"></span>
+	        </p>
+	        <p class="card-text" >
+	        	<strong>Start Hour:</strong> <span th:text="${pharmacy.startHour}"></span>
+	        </p>
+	        <p class="card-text" >
+	        	<strong>End Hour:</strong> <span th:text="${pharmacy.endHour}"></span>
+	        </p>
+	        <p class="card-text" >
+	        	<strong>RUC:</strong> <span th:text="${pharmacy.ruc}"></span>
+	        </p>
+	        <p class="card-text" >
+	        	<strong>Description:</strong> <span th:text="${pharmacy.description}"></span>
+	        </p>	
 
+	      </div>
+	    </div>	    
+	  </div>
+	  
+	  	<a th:href="@{'/pharmacies'}" class="btn btn-info"><i class="fas fa-arrow-left"></i> Return</a>
+	</div>
 
-	<a th:href="@{'/pharmacies'}" class="btn btn-primary"><i
-		class="fas fa-plus-square"></i> Return</a>
+</section>
 
+	<footer th:replace="layout/layout :: footer_hope"></footer>
 	<script th:src="@{js/bootstrap.bundle.min.js}"></script>
 </body>
 </html>

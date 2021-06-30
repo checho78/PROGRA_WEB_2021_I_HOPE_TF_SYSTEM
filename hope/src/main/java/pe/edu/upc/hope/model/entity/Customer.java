@@ -12,6 +12,9 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 @Entity
 @Table(name = "customers")
 public class Customer {
@@ -43,8 +46,10 @@ public class Customer {
 	@Column(name = "password", length = 20, nullable = false)
 	private String password;
 
-	@OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
+	/* @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
+	@OnDelete(action = OnDeleteAction.CASCADE)
 	private List<Card> cards;
+	
 
 	
 	// -- Constructor, Getter y Setter
@@ -62,7 +67,7 @@ public class Customer {
 	public void setCards(List<Card> cards) {
 		this.cards = cards;
 	}
-
+*/
 
 	public Integer getId() {
 		return id;

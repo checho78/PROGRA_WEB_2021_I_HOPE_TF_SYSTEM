@@ -13,6 +13,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 @Entity
 @Table(name = "cards")
 public class Card {
@@ -35,6 +38,7 @@ public class Card {
     
     @ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "id_customer", nullable = true)
+    @OnDelete(action = OnDeleteAction.CASCADE)
 	private Customer customer;
 	
     @OneToMany(mappedBy = "card", fetch = FetchType.LAZY)
