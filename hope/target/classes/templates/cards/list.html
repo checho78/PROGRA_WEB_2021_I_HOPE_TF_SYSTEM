@@ -15,8 +15,7 @@
 					<tr>
 						<th scope="col">#</th>
 						<th scope="col" style="width: 25rem;">Num Card</th>
-						<th scope="col" style="width: 25rem;">Expiration Month</th>
-						<th scope="col" style="width: 25rem;">Expiration Year</th>
+						<th scope="col" style="width: 25rem;">Expiration Date</th>
 						<th scope="col" style="width: 25rem;">CVV</th>
 						<th scope="col" style="width: 25rem;">Customer</th>
 						<th scope="col"></th>
@@ -31,8 +30,8 @@
 						<th scope="row" th:text="${card.id}"></th>
 						<td th:text="${card.numCard}"></td>
 
-						<td th:text="${card.expirationMonth}"></td>
-						<td th:text="${card.expirationYear}"></td>
+						<td th:text="${card.expirationDate}"></td>
+
 						<td th:text="${card.cvv}"></td>
 							<td th:text="${card.customer.id}"></td>
 

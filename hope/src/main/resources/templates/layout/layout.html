@@ -93,34 +93,14 @@
 								
 
 							<li class="nav-item"><a
-								style="color: #4f4399; font-weight: bold;"
-								th:href="@{/allProducts}" class="nav-link">Products</a></li>
-							<li class="nav-item"><a
 								style="color: #4f4399; font-weight: bold;" class="nav-link"
 								th:href="@{/allPharmacies}">Pharmacy</a></li>
-							<li class="nav-item"><a
-								style="color: #4f4399; font-weight: bold;" class="nav-link"
-								th:href="@{/brands}">Brands</a></li>
-
-							<li class="nav-item"><a
-								style="color: #4f4399; font-weight: bold;" class="nav-link"
-								th:href="@{/tarjetas}">Tarjetas</a></li>
-
-							<li class="nav-item"><a
-								style="color: #4f4399; font-weight: bold;" class="nav-link"
-								th:href="@{/clientes}">Clientes</a></li>
-								
-								
-
 		
 
 							<li class="nav-item"><a
 								style="color: #4f4399; font-weight: bold;"
 								th:href="@{/myReservations}" class="nav-link">My
 									Reservations</a></li>
-							<li class="nav-item"><a
-								style="color: #4f4399; font-weight: bold;" class="nav-link"
-								href="#">My Cart </a></li>
 
 						</ul>
 
@@ -148,11 +128,11 @@
 								data-bs-toggle="dropdown" aria-expanded="false"> Profile </a>
 								<ul class="dropdown-menu"
 									aria-labelledby="navbarScrollingDropdown">
-									<li><a style="color: #4f4399; font-weight: bold;"
-										class="dropdown-item" href="#">View Profile</a></li>
-									<li><a style="color: #4f4399; font-weight: bold;"
-										class="dropdown-item" href="#">Change Password</a></li>
-									<li><hr class="dropdown-divider"></li>
+										<li><a style="color: #4f4399; font-weight: bold;"
+										class="dropdown-item"	th:href="@{/customers}">Customer</a></li>
+										
+										<li><a style="color: #4f4399; font-weight: bold;"
+										class="dropdown-item"  th:href="@{/cards}">Card</a></li>
 									<li><a style="color: #4f4399; font-weight: bold;"
 										class="dropdown-item" href="#">Log out</a></li>
 								</ul></li>

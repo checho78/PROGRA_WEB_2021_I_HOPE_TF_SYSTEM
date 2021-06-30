@@ -4,6 +4,7 @@ package pe.edu.upc.hope.model.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -11,9 +12,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "Reservations")
@@ -42,20 +46,18 @@ public class Reservation {
 	@JoinColumn(name = "id_card", nullable = false)
 	private Card card;
 	
-	@OneToMany(mappedBy = "reservation", fetch = FetchType.LAZY)
-	private List<ReservationDetail> reservationdetails;
+	@ManyToMany(fetch = FetchType.LAZY,
+            cascade = {CascadeType.PERSIST, CascadeType.MERGE},
+            mappedBy = "reservations")
+    @JsonIgnore
+    private List<Product> products;
 
 	//========================= setters and getters and constructores 
 	
 	public Reservation() {
-		reservationdetails= new ArrayList<ReservationDetail> ();
+		products= new ArrayList<Product> ();
 	}
 	
-	
-	
-	
-
-
 	public Reservation(Integer id, String description, String price, String commission, String startDate,
 			String endDate, Card card) {
 		super();
@@ -67,9 +69,6 @@ public class Reservation {
 		this.endDate = endDate;
 		this.card = card;
 	}
-
-
-
 
 	public Integer getId() {
 		return id;
@@ -125,18 +124,14 @@ public class Reservation {
 
 	public void setCard(Card card) {
 		this.card = card;
+	}	
+
+	public List<Product> getProducts() {
+		return products;
 	}
-	
 
-	public List<ReservationDetail> getReservationdetails() {
-		return reservationdetails;
-	}
-
-
-
-
-	public void setReservationdetails(List<ReservationDetail> reservationdetails) {
-		this.reservationdetails = reservationdetails;
+	public void setProducts(List<Product> products) {
+		this.products = products;
 	}
 
 

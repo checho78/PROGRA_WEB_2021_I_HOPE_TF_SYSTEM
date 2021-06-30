@@ -3,6 +3,7 @@ package pe.edu.upc.hope.model.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -10,9 +11,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "Products")
@@ -25,13 +30,13 @@ public class Product {
 	@Column(name = "name", length = 30)
 	private String name;
 	
-	public int getStock() {
+	public Integer getStock() {
 		return stock;
 	}
 
 
 
-	public void setStock(int stock) {
+	public void setStock(Integer stock) {
 		this.stock = stock;
 	}
 
@@ -41,7 +46,7 @@ public class Product {
 	private Double price;
 	
 	@Column(name = "stock")
-	private int stock;
+	private Integer stock;
 	
 	@Column(name = "description", length = 100)
 	private String description;
@@ -61,9 +66,15 @@ public class Product {
 		@JoinColumn(name = "id_pharmacy", nullable = false)
 	  private Pharmacy pharmacy;
 
+	  @ManyToMany(fetch = FetchType.LAZY,
+	            cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+	    @JoinTable(name = "reservation_details",
+	            joinColumns = {@JoinColumn(name = "id_product")},
+	            inverseJoinColumns = {@JoinColumn(name = "id_reservation")})
+	    @JsonIgnore
+	    private List<Reservation> reservations;
+	  
 
-		@OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
-		private List<ReservationDetail> reservationDetails;
 
 		
 
@@ -72,13 +83,13 @@ public class Product {
 	  
 	
 		public Product() {
-			reservationDetails  = new ArrayList<ReservationDetail>();
+			reservations  = new ArrayList<Reservation>();
 		}
 
 
 
 		public Product(Integer id, String name, Double price, String description, Brand brand, Category category,
-				Pharmacy pharmacy, List<ReservationDetail> reservationDetails) {
+				Pharmacy pharmacy, List<Reservation> reservations) {
 			super();
 			this.id = id;
 			this.name = name;
@@ -87,7 +98,7 @@ public class Product {
 			this.brand = brand;
 			this.category = category;
 			this.pharmacy = pharmacy;
-			this.reservationDetails = reservationDetails;
+			this.reservations = reservations;
 		}
 
 
@@ -176,14 +187,14 @@ public class Product {
 
 
 
-		public List<ReservationDetail> getReservationDetails() {
-			return reservationDetails;
+		public List<Reservation> getReservations() {
+			return reservations;
 		}
 
 
 
-		public void setReservationDetails(List<ReservationDetail> reservationDetails) {
-			this.reservationDetails = reservationDetails;
+		public void setReservations(List<Reservation> reservations) {
+			this.reservations = reservations;
 		}
 
 
