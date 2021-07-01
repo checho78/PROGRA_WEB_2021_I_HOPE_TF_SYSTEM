@@ -1,62 +1,79 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
 
-    <title>New Card item</title>
-  </head>
-  <body>
-    <h1>New Card Item</h1>
-	
-	<div class="card" style="width: 20rem;">
-	  <div class="card-body">
-	    
-	    <form th:action="@{/cards/savenew}" th:object="${cardNew}" method="post">
-		  
-		  <div class="mb-3">
-		    <label for="name" class="form-label">Num Card</label>		    
-		    <input type="text" class="form-control" th:field="*{numCard}">		    
-		  </div>
-		  
-		  
-		   <div class="mb-3">
-		    <label for="name" class="form-label">Expiration Date</label>		    
-		    <input type="text" class="form-control" th:field="*{expirationMonth}">		    
-		  </div>
+<title>Card Register</title>
+</head>
+<body>
 
-		  
-		  
-		   <div class="mb-3">
-		    <label for="name" class="form-label">CVV</label>		    
-		    <input type="text" class="form-control" th:field="*{cvv}">		    
-		  </div>
-		  
-		  
-	
-		  <div class="mb-3 row">
-		    <label for="customer" class="col-sm-4 col-form-label">Customer :</label>
-		    <div class="col-sm-8">
-		      	
-		      	<select th:field="*{customer}" class="form-select" aria-label="Default select example">
-				  <option th:each="customer : ${customers}"
-				  		th:value="${customer.id}"
-				  		th:text="${customer.firstName}" ></option>
-				</select>
-		    </div>
-		  </div>
-		  
-		 
-		  
-		  <button type="submit" class="btn btn-success">Save</button>
-		</form>
-	  </div>
+	<header th:replace="layout/layout :: header"></header>
+
+	<h1 style="max-width: 700px; margin-left: 100px;">New Card</h1>
+	<div class="card text-dark bg-light card border-info mb-3"
+		style="max-width: 700px; margin-left: 40px;">
+
+
+		<div class="row g-0">
+
+			<div>
+				<div class="card">
+					<div class="card-body">
+
+						<form th:action="@{/cards/savenew}" th:object="${cardNew}"
+							method="post">
+
+							<div class="mb-3">
+								<label for="name" class="form-label">Num Card</label> <input
+									type="text" class="form-control" th:field="*{numCard}">
+							</div>
+
+
+							<div class="mb-3">
+								<label for="name" class="form-label">Expiration Date</label> <input
+									type="text" class="form-control" th:field="*{expirationDate}">
+							</div>
+
+
+
+							<div class="mb-3">
+								<label for="name" class="form-label">CVV</label> <input
+									type="text" class="form-control" th:field="*{cvv}">
+							</div>
+
+
+
+							<div class="mb-3 row">
+								<label for="customer" class="col-sm-4 col-form-label">Customer
+									:</label>
+								<div class="col-sm-8">
+
+									<select th:field="*{customer}" class="form-select"
+										aria-label="Default select example">
+										<option th:each="customer : ${customers}"
+											th:value="${customer.id}" th:text="${customer.firstName}"></option>
+									</select>
+								</div>
+							</div>
+
+
+
+
+						</form>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<button type="submit" class="btn btn-success">Save</button>
+		<br> <a th:href="@{'/cards'}" class="btn btn-primary"><i
+			class="fas fa-plus-square"></i> Return</a>
 	</div>
-		
-	<a th:href="@{'/cards'}" class="btn btn-primary"><i class="fas fa-plus-square"></i> Return</a>
+	<footer th:replace="layout/layout :: footer_hope"></footer>
 
-    <script th:src="@{js/bootstrap.bundle.min.js}" ></script>
-  </body>
+	<script th:src="@{js/bootstrap.bundle.min.js}"></script>
+</body>
 </html>

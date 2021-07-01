@@ -1,67 +1,88 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
 
-    <title>New Customer item</title>
-  </head>
-  <body>
-    <h1>New Customer Item</h1>
-	
-	<div class="card" style="width: 20rem;">
-	  <div class="card-body">
-	    
-	    <form th:action="@{/customers/savenew}" th:object="${customerNew}" method="post">
-		 
-		 
-		  <div class="mb-3">
-		    <label for="name" class="form-label">First Name</label>		    
-		    <input type="text" class="form-control" th:field="*{firstName}">		    
-		  </div>
-		  
-		  
-		   <div class="mb-3">
-		    <label for="name" class="form-label">Last Name</label>		    
-		    <input type="text" class="form-control" th:field="*{lastName}">		    
-		  </div>
-		  
-		  
-		  
-		   <div class="mb-3">
-		    <label for="name" class="form-label">Cellphone</label>		    
-		    <input type="text" class="form-control" th:field="*{cellphone}">		    
-		  </div>
-		  
-		  		   <div class="mb-3">
-		    <label for="name" class="form-label">Dni</label>		    
-		    <input type="text" class="form-control" th:field="*{dni}">		    
-		  </div>
-		  
-		  
-		   <div class="mb-3">
-		    <label for="name" class="form-label">Email</label>		    
-		    <input type="text" class="form-control" th:field="*{email}">		    
-		  </div>
-	  
-	  
-	  
-	  		   <div class="mb-3">
-		    <label for="name" class="form-label">Password</label>		    
-		    <input type="text" class="form-control" th:field="*{password}">		    
-		  </div>
-	  
-	  
-		  
-		  <button type="submit" class="btn btn-success">Save</button>
-		</form>
-	  </div>
-	</div>
+<title>Customer Register</title>
+</head>
+<body>
+
+	<header th:replace="layout/layout :: header"></header>
+
+	<h1 style="max-width: 700px; margin-left: 100px;">New Customer</h1>
+	<div class="card text-dark bg-light card border-info mb-3"
+		style="max-width: 700px; margin-left: 40px;">
+
+
+		<div class="row g-0">
+
+			<div>
+				<div class="card">
+					<div class="card-body">
+
+						<form th:action="@{/customers/savenew}" th:object="${customerNew}"
+							method="post">
+
+							<div class="mb-3">
+								<label for="name" class="form-label">First Name</label> <input
+									type="text" class="form-control" th:field="*{firstName}">
+							</div>
+
+
+							<div class="mb-3">
+								<label for="name" class="form-label">Last Name</label> <input
+									type="text" class="form-control" th:field="*{lastName}">
+							</div>
+
+
+
+							<div class="mb-3">
+								<label for="name" class="form-label">Cellphone</label> <input
+									type="text" class="form-control" th:field="*{cellphone}">
+							</div>
+
+							<div class="mb-3">
+								<label for="name" class="form-label">Dni</label> <input
+									type="text" class="form-control" th:field="*{dni}">
+							</div>
+
+
+							<div class="mb-3">
+								<label for="name" class="form-label">Email</label> <input
+									type="text" class="form-control" th:field="*{email}">
+							</div>
+
+
+
+							<div class="mb-3">
+								<label for="name" class="form-label">Password</label> <input
+									type="text" class="form-control" th:field="*{password}">
+							</div>
+
+
+
+						</form>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+
+		<button type="submit" class="btn btn-success">Save</button>
 		
-	<a th:href="@{'/customers'}" class="btn btn-primary"><i class="fas fa-plus-square"></i> Return</a>
+		<br> 
+		<a th:href="@{'/customers'}" class="btn btn-primary"><i
+			class="fas fa-plus-square"></i> Return</a>
 
-    <script th:src="@{js/bootstrap.bundle.min.js}" ></script>
-  </body>
+
+
+	</div>
+	<footer th:replace="layout/layout :: footer_hope"></footer>
+
+	<script th:src="@{js/bootstrap.bundle.min.js}"></script>
+</body>
 </html>
