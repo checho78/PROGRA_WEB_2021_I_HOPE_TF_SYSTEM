@@ -10,10 +10,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
+
+
 
 @Entity
 @Table(name = "customers")
@@ -45,6 +48,8 @@ public class Customer {
 	
 	@Column(name = "password", length = 20, nullable = false)
 	private String password;
+
+
 
 	/* @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
 	@OnDelete(action = OnDeleteAction.CASCADE)
@@ -135,9 +140,6 @@ public class Customer {
 		this.password = password;
 	}
 	
-	
-	
-	
-	
+
 	
 }

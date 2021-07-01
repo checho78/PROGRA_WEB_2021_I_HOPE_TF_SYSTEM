@@ -1,8 +1,11 @@
 package pe.edu.upc.hope.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import pe.edu.upc.hope.model.entity.Customer;
 
 @Controller
 @RequestMapping("/")
@@ -60,5 +63,10 @@ public class FrontController {
 		return "layout/viewDetailsPharmacies";
 	}
 	
+	@GetMapping("login")
+	public String login() {
+		return "login";
+	}
 	
+
 }

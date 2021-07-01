@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -70,6 +71,11 @@ public class CustomerController {
 	@PostMapping("saveedit")	// POST: /customer/saveedit
 	public String saveEdit(Model model, @ModelAttribute("customerEdit") Customer customer) {		
 		try {
+			
+			BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+		    String encodedPassword = passwordEncoder.encode(customer.getPassword());
+		    customer.setPassword(encodedPassword);
+			
 			customerService.update(customer);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -87,6 +93,11 @@ public class CustomerController {
 	@PostMapping("savenew")	// POST: /customer/savenew
 	public String saveNew(Model model, @ModelAttribute("customerNew") Customer customer) {		
 		try {
+			
+			BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+		    String encodedPassword = passwordEncoder.encode(customer.getPassword());
+		    customer.setPassword(encodedPassword);
+		    
 			customerService.create(customer);
 		} catch (Exception e) {
 			e.printStackTrace();
