@@ -18,7 +18,7 @@
 		<nav aria-label="breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a th:href="@{/home}">Home</a></li>
-				<li class="breadcrumb-item active" aria-current="page">Products</li>
+				<li class="breadcrumb-item active" aria-current="page">Pharmacies</li>
 			</ol>
 		</nav>
 	</section>
@@ -38,7 +38,7 @@
 
 
 						<p class="card-text">
-
+						<h2>
 							<strong><span th:text="${pharmacy.name}"></span></strong>
 						</h2>
 						</p>
@@ -53,7 +53,7 @@
 						</p>
 
 						<p class="card-text">
-							<strong>Districtr: </strong> <span th:text="${pharmacy.district}"></span>
+							<strong>District: </strong> <span th:text="${pharmacy.district}"></span>
 						</p>
 
 
@@ -61,11 +61,9 @@
 
 
 						<a th:href="@{'/pharmacies/' + ${pharmacy.id}}"
-							class="btn btn-primary">View details</a>  
-							
-							<br></br>
-							<a	th:href="@{/shoppingCart}" class="btn btn-success">Add to
-							Cart</a>
+							class="btn btn-primary">View details</a> <br></br> <a
+							th:href="@{/shoppingCart}" class="btn btn-success">Show
+							Products</a>
 
 
 

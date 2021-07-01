@@ -1,32 +1,73 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+<head th:replace="layout/layout :: head(~{::title})">
 
-<title>Tarjeta item</title>
+<title>Product Detail</title>
+
 </head>
+
+
 <body>
-	<h1>Tarjeta Item</h1>
-
-	<p>
-		Id: <span th:text="${tarjeta.idTarjeta}"></span>, Num Tarjeta: <span
-			th:text="${tarjeta.numTarjeta}"></span>, Expiration Month: <span
-			th:text="${tarjeta.expirationMonth}"></span>, Expiration Year: <span
-			th:text="${tarjeta.expirationYear}"></span>, CVV: <span
-			th:text="${tarjeta.cvv}"></span>
-	</p>
+	<header th:replace="layout/layout :: header"></header>
+	
+	
+	<section style="padding: 30px;">
+	<h1>Product Detail</h1>
 
 
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+	  <ol class="breadcrumb">
+	    <li class="breadcrumb-item">Hope</li>
+	    <li class="breadcrumb-item">List Products</li>
+	    <li class="breadcrumb-item active" aria-current="page"> 
+	    	<span th:text="${product.name}"></span> 
+	    </li>
+	  </ol>
+	</nav>
 
 
+	<div class="card text-dark bg-light card border-info mb-3" style="max-width: 700px; margin-left:40px;">
+	  <div class="row g-0">
+	    <div class="col-md-6">
+	      <img th:src="@{/images/localproduct3.jpg}" class="img-fluid rounded-start" alt="...">
+	    </div>
+	    <div class="col-md-6">
+	      <div class="card-body">
 
 
-	<a th:href="@{'/tarjetas'}" class="btn btn-primary"><i
-		class="fas fa-plus-square"></i> Return</a>
+	        <h3 class="card-title" th:text="${product.name }"></h3>
+	       
+	        <p class="card-text" >
+	        	<strong>Price:</strong> <span th:text="${product.price}"></span>
+	        </p>
+	     
+	        <p class="card-text" >
+	        	<strong>Stock:</strong> <span th:text="${product.stock}"></span>
+	        </p>
+	        <p class="card-text" >
+	        	<strong>Description:</strong> <span th:text="${product.description}"></span>
+	        </p>
+	        <p class="card-text" >
+	        	<strong>Brand:</strong> <span th:text="${product.category.name}"></span>
+	        </p>
+	        <p class="card-text" >
+	        	<strong>Category:</strong> <span th:text="${product.category.name}"></span>
+	        </p>
+	        <p class="card-text" >
+	        	<strong>Pharmacy:</strong> <span th:text="${product.pharmacy.name}"></span>
+	        </p>	
 
+	      </div>
+	    </div>	    
+	  </div>
+	  
+	  	<a th:href="@{'/products'}" class="btn btn-info"><i class="fas fa-arrow-left"></i> <strong>Return</strong></a>
+	</div>
+
+</section>
+
+	<footer th:replace="layout/layout :: footer_hope"></footer>
 	<script th:src="@{js/bootstrap.bundle.min.js}"></script>
 </body>
 </html>
