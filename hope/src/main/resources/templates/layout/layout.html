@@ -54,56 +54,58 @@
 										class="dropdown-item" href="#">Product</a></li>
 
 								</ul></li>
-								
-									
-											<li class="nav-item"><a
+
+
+							<li class="nav-item"><a
 								style="color: #4f4399; font-weight: bold;"
 								th:href="@{/myReservations}" class="nav-link">My
-									Reservations</a></li>			
-									
-										
+									Reservations</a></li>
+
+
+
 
 							<li class="nav-item"><a
 								style="color: #4f4399; font-weight: bold;" class="nav-link"
-								th:href="@{/pharmacies}">Pharmacy</a></li>
-		
-							
-									
-									<li class="nav-item dropdown bg-info"><a
+								th:href="@{/pharmacies}">All Pharmacy</a></li>
+
+
+
+							<li class="nav-item dropdown bg-info"><a
 								style="color: #4f4399; font-weight: bold;"
 								class="nav-link dropdown-toggle" href="#"
 								id="navbarScrollingDropdown" role="button"
 								data-bs-toggle="dropdown" aria-expanded="false"> CRUD </a>
 								<ul class="dropdown-menu"
 									aria-labelledby="navbarScrollingDropdown">
-									
-									<li><a 	style="color: #4f4399; font-weight: bold;"
-										class="dropdown-item"th:href="@{/pharmaciesCrud}">Pharmacy</a></li>
-									
+
+									<li><a style="color: #4f4399; font-weight: bold;"
+										class="dropdown-item" th:href="@{/pharmaciesCrud}">Pharmacy</a></li>
+
 									<li><a style="color: #4f4399; font-weight: bold;"
 										class="dropdown-item" th:href="@{/categories}">Category</a></li>
-										
-										<li><a style="color: #4f4399; font-weight: bold;"
+
+									<li><a style="color: #4f4399; font-weight: bold;"
 										class="dropdown-item" th:href="@{/brands}">Brand</a></li>
-										
-										<li><a style="color: #4f4399; font-weight: bold;"
-										class="dropdown-item"th:href="@{/products}">Product</a></li>
-										
-										<li><a style="color: #4f4399; font-weight: bold;"
-										class="dropdown-item"	th:href="@{/customers}">Customer</a></li>
-										
-										<li><a style="color: #4f4399; font-weight: bold;"
-										class="dropdown-item"  th:href="@{/cards}">Card</a></li>
-										
-										<li><a style="color: #4f4399; font-weight: bold;"
-										class="dropdown-item"  th:href="@{/reservations}">Reservation</a></li>
-										
-											<li><a style="color: #4f4399; font-weight: bold;"
-										class="dropdown-item"  th:href="@{/reservationDetails}">Reservation Detail</a></li>
-										
+
+									<li><a style="color: #4f4399; font-weight: bold;"
+										class="dropdown-item" th:href="@{/products}">Product</a></li>
+
+									<li><a style="color: #4f4399; font-weight: bold;"
+										class="dropdown-item" th:href="@{/customers}">Customer</a></li>
+
+									<li><a style="color: #4f4399; font-weight: bold;"
+										class="dropdown-item" th:href="@{/cards}">Card</a></li>
+
+									<li><a style="color: #4f4399; font-weight: bold;"
+										class="dropdown-item" th:href="@{/reservations}">Reservation</a></li>
+
+									<li><a style="color: #4f4399; font-weight: bold;"
+										class="dropdown-item" th:href="@{/reservationDetails}">Reservation
+											Detail</a></li>
+
 
 								</ul></li>
-								
+
 
 						</ul>
 
@@ -120,25 +122,38 @@
 							style="-bs-scroll-height: 100px;">
 							<li class="nav-item"><a
 								style="color: #4f4399; font-weight: bold;" class="nav-link"
-								aria-current="page"th:href="@{/login}">Sign in</a></li>
+								aria-current="page" th:href="@{/login}">Sign in</a></li>
 							<li class="nav-item"><a
 								style="color: #4f4399; font-weight: bold;" class="nav-link"
 								aria-current="page" th:href="@{'/customers/new'}">Sign up</a></li>
-								
+
 							<li class="nav-item dropdown bg-info"><a
 								style="color: #4f4399; font-weight: bold;"
 								class="nav-link dropdown-toggle" href="#"
 								id="navbarScrollingDropdown" role="button"
-								data-bs-toggle="dropdown" aria-expanded="false"> <i class="fas fa-user-circle"></i> Profile </a>
+								data-bs-toggle="dropdown" aria-expanded="false"> <i
+									class="fas fa-user-circle"></i> Profile
+							</a>
 								<ul class="dropdown-menu"
 									aria-labelledby="navbarScrollingDropdown">
-										<li><a style="color: #4f4399; font-weight: bold;"
-										class="dropdown-item"	th:href="@{/customers}">Customer</a></li>
-										
-										<li><a style="color: #4f4399; font-weight: bold;"
-										class="dropdown-item"  th:href="@{/cards}">Card</a></li>
+
+									<li><a style="color: #4f4399; font-weight: bold;"
+										class="dropdown-item" th:href="@{/customers}">Customer</a></li>
+
+									<li><a style="color: #4f4399; font-weight: bold;"
+										class="dropdown-item" th:href="@{/cards}">Card</a></li>
+
 									<li><a style="color: #4f4399; font-weight: bold;"
 										class="dropdown-item" href="#">Log out</a></li>
+
+
+									<li class="nav-item"><a
+										style="color: #4f4399; font-weight: bold;" class="nav-link"
+										th:href="@{'/pharmacies/new'}"> Pharmacy</a></li>
+										
+										
+									
+
 								</ul></li>
 						</ul>
 

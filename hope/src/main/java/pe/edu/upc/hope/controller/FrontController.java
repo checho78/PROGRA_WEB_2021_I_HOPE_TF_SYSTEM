@@ -52,7 +52,7 @@ public class FrontController {
 		return "layout/myReservations";
 	}
 
-	
+
 	@GetMapping("allPharmacies")
 	public String allPharmacies() {
 		return "layout/allPharmacies";

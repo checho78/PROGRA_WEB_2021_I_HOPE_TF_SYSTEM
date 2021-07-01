@@ -1,60 +1,84 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="layout/layout :: head(~{::title})">
-<title>HR - Pharmacys</title>
+<head th:fragment="head(title)">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+<link th:href="@{/css/fontawesome.min.css}" rel="stylesheet">
+<link th:href="@{/css/solid.min.css}" rel="stylesheet">
+
+<title>All Pharmacies</title>
+
+
 </head>
 <body>
 	<header th:replace="layout/layout :: header"></header>
-	
-		<section style="padding: 30px;">
-	<h1>Pharmacy List</h1>
+	<section style="margin: 20px;">
+		<nav aria-label="breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a th:href="@{/home}">Home</a></li>
+				<li class="breadcrumb-item active" aria-current="page">Products</li>
+			</ol>
+		</nav>
+	</section>
 
-	<div class="card text-center card border-info card text-dark bg-light" style="width: 70rem;">
-		<div class="card-header">Pharmacy Management</div>
-		<div class="card-body">
-			<table class="table table-hover">
-				<thead>
-					<tr>
-						<th scope="col">#</th>
-						<th scope="col" style="width: 25rem;">Name</th>
-						<th scope="col" style="width: 25rem;">Address</th>
-						<th scope="col" style="width: 25rem;">District</th>
-						<th scope="col" style="width: 25rem;">Password</th>
-						<th scope="col" style="width: 25rem;">Description</th>
-						<th scope="col" style="width: 45rem;">Start Hour</th>
-						<th scope="col" style="width: 35rem;">End Hour</th>
-						<th scope="col" style="width: 25rem;">RUC</th>
-						<th scope="col"></th>
-						<th scope="col"></th>
-						<th scope="col"></th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr th:each="pharmacy : ${pharmacies}">
-						<th scope="row" th:text="${pharmacy.id}"></th>
-						<td th:text="${pharmacy.name}"></td>
-						<td th:text="${pharmacy.address}"></td>
-						<td th:text="${pharmacy.district}"></td>
-						<td th:text="${pharmacy.password}"></td>					
-						<td th:text="${pharmacy.description}"></td>
-						<td th:text="${pharmacy.startHour}"></td>
-						<td th:text="${pharmacy.endHour}"></td>
-						<td th:text="${pharmacy.ruc}"></td>
-						
-						
-						<td><a th:href="@{'/pharmacies/' + ${pharmacy.id}}"
-							class="btn btn-primary" style="width: 7rem;">View details</a></td>
-			
-					</tr>
-				</tbody>
-			</table>
 
+	<section style="padding: 30px;">
+
+		<p style="color: #342c66; font-size: 20pt; font-weight: bold;">All
+			Pharmacies</p>
+
+		<div class="row row-cols-1 row-cols-md-5 g-6">
+			<div class="col" th:each="pharmacy : ${pharmacies}">
+				<div class="card">
+					<img src="images/vap.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+
+
+
+						<p class="card-text">
+
+							<strong><span th:text="${pharmacy.name}"></span></strong>
+						</h2>
+						</p>
+
+						<p class="card-text">
+							<strong>Start Hour: </strong> <span
+								th:text="${pharmacy.startHour}"></span>
+						</p>
+
+						<p class="card-text">
+							<strong>End Hour: </strong> <span th:text="${pharmacy.endHour}"></span>
+						</p>
+
+						<p class="card-text">
+							<strong>Districtr: </strong> <span th:text="${pharmacy.district}"></span>
+						</p>
+
+
+
+
+
+						<a th:href="@{'/pharmacies/' + ${pharmacy.id}}"
+							class="btn btn-primary">View details</a>  
+							
+							<br></br>
+							<a	th:href="@{/shoppingCart}" class="btn btn-success">Add to
+							Cart</a>
+
+
+
+
+					</div>
+				</div>
+			</div>
 		</div>
-		<div class="card-footer text-muted">
 
-		</div>
-	</div>
-</section>
+
+
+
+	</section>
 	<footer th:replace="layout/layout :: footer_hope"></footer>
 
 	<script th:src="@{js/bootstrap.bundle.min.js}"></script>
