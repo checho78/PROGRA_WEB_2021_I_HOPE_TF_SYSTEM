@@ -7,6 +7,7 @@
 <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
 <link th:href="@{/css/fontawesome.min.css}" rel="stylesheet">
 <link th:href="@{/css/solid.min.css}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
 
 <title>All Pharmacies</title>
 
@@ -26,13 +27,13 @@
 
 	<section style="padding: 30px;">
 
-		<p style="color: #342c66; font-size: 20pt; font-weight: bold;">All
+		<p style="color: #342c66; font-size: 30pt; font-weight: bold;">All
 			Pharmacies</p>
 
-		<div class="row row-cols-1 row-cols-md-6 g-6">
+		<div class="row row-cols-1 row-cols-md-4 g-6">
 			<div class="col" th:each="pharmacy : ${pharmacies}">
 				<div class="card">
-					<img src="images/localpharmacy3.jpg" class="card-img-top" alt="...">
+					<img src="images/bg3.jpg" class="card-img-top" alt="...">
 					<div class="card-body">
 
 

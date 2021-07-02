@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
 body{
     margin: 0;
     padding: 0;
-    background: url(../images/pharmacyOpen.jpg);
+    background: url(../images/localpharmacy3.jpg);
     background-size: cover;
     background-position: absolute;
     font-family: sans-serif;
@@ -104,6 +107,18 @@ h1{
 }
 
 
+
+.btn{
+    display: inline-block;
+    padding: .5rem 1.3rem;
+    font-size: .8rem;
+    border: 2px solid #fff;
+    border-radius: 2rem;
+    line-height: 1;
+    margin: 0 .2rem;
+    transition: .3s;
+    text-transform: uppercase;
+}
 
 
 
