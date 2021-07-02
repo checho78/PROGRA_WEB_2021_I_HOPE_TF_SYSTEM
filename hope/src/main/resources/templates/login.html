@@ -8,11 +8,11 @@
 <body>
 
 <div class="loginbox">
-    <img th:src="@{/images/avatar.svg}" class="avatar">
+    <img th:src="@{/images/hombre.svg}" class="avatar">
     <h1>Login Here</h1>
     <form th:action="@{/signin}" method="post">
         <p>Username</p>
-        <input type="text" name="username" id="username" placeholder="Enter Username">
+        <input type="text" name="email" id="email" placeholder="Enter Email">
         <p>Password</p>
         <input type="password" name="password" id="password" placeholder="Enter Password">
         <input type="submit" name="" value="Login">
