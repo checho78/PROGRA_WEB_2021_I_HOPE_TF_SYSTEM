@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import pe.edu.upc.hope.model.entity.Product;
@@ -58,6 +59,52 @@ public class ProductController {
 		return "products/list";
 	}
 	
+	
+	// find ================
+	
+	
+	@GetMapping("/searchname")
+	public String searchByName(Model model, @RequestParam(value = "name", required = false) String name) {
+		try {
+			List<Product> products;
+			products = productService.findByName(name);
+			products = productService.getAll();
+			model.addAttribute("products", products);
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.err.println(e.getMessage());
+		}
+		return "products/list";
+	}
+
+	@GetMapping("/searchprice")
+	public String searchByPrice(Model model, @RequestParam(value = "price", required = false) Double price) {
+		try {
+			List<Product> products;
+			products = productService.findByPrice(price);
+			model.addAttribute("products", products);
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.err.println(e.getMessage());
+		}
+		return "products/list";
+	}
+
+	@GetMapping("/searchdescription")
+	public String searchByDescription(Model model,
+			@RequestParam(value = "description", required = false) String description) {
+		try {
+			List<Product> products;
+			products = productService.findByDescription(description);
+			model.addAttribute("products", products);
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.err.println(e.getMessage());
+		}
+		return "products/list";
+	}
+	
+	
 	@GetMapping("{id}")		// GET: /product/{id}
 	public String findById(Model model, @PathVariable("id") Integer id) {
 		try {
@@ -72,6 +119,23 @@ public class ProductController {
 		}
 		return "redirect:/products";
 	}
+	
+
+	@GetMapping("{id}/shop")		// GET: /product/{id}
+	public String Shopping(Model model, @PathVariable("id") Integer id) {
+		try {
+			Optional<Product> optional = productService.findById(id);
+			if (optional.isPresent()) {
+				model.addAttribute("product", optional.get());
+				return "layout/shoppingCart";
+			}			
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.err.println(e.getMessage());
+		}
+		return "redirect:/products";
+	}
+	
 	//--------Edit -----------------------------
 	@GetMapping("{id}/edit")	// GET: /product/{id}/edit
 	public String editById(Model model, @PathVariable("id") Integer id) {

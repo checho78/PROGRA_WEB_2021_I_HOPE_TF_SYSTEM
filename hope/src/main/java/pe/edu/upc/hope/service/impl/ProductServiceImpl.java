@@ -25,6 +25,24 @@ public class ProductServiceImpl implements ProductService{
 		return productRepository;
 	}
 
+	@Transactional(readOnly = true)
+	@Override
+	public List<Product> findByName(String name) throws Exception {
+		return productRepository.findByName(name);
+	}
+	@Transactional(readOnly = true)
+	@Override
+	public List<Product> findByPrice(Double price) throws Exception {
+		return productRepository.findByPrice(price);
+	}
+	@Transactional(readOnly = true)
+	@Override
+	public List<Product> findByDescription(String description) throws Exception {
+		return productRepository.findByDescription(description);
+	}
+
+
+
 	/* @Transactional(readOnly = true)
 	@Override
 	public List<Product> findProductsByReservationId(Reservation reservation) throws Exception {

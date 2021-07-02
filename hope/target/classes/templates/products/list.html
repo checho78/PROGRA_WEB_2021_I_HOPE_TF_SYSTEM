@@ -7,7 +7,6 @@
 <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
 <link th:href="@{/css/fontawesome.min.css}" rel="stylesheet">
 <link th:href="@{/css/solid.min.css}" rel="stylesheet">
-   <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
 
 <title>All Products</title>
 
@@ -25,6 +24,52 @@
 	</section>
 
 
+
+	<table>
+		<tr>
+			<td>
+				<form class="d-flex" method="get"
+					th:action="@{/products/searchname}">
+					<input class="form-control me-2" type="search"
+						placeholder="Search by name" aria-label="Search" th:name="name">
+					<button type="submit" class="btn btn-warning">
+						<i class="fas fa-search"></i>
+					</button>
+				</form>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<form class="d-flex" method="get"
+					th:action="@{/products/searchprice}">
+					<input class="form-control me-2" type="search"
+						placeholder="Search by price" aria-label="Search" th:name="price">
+					<button type="submit" class="btn btn-warning">
+						<i class="fas fa-search"></i>
+					</button>
+				</form>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<form class="d-flex" method="get"
+					th:action="@{/products/searchdescription}">
+					<input class="form-control me-2" type="search"
+						placeholder="Search by description" aria-label="Search"
+						th:name="description">
+					<button type="submit" class="btn btn-warning">
+						<i class="fas fa-search"></i>
+					</button>
+				</form>
+			</td>
+		</tr>
+	</table>
+
+	<a style="color: #4f4399; font-weight: bold;" class="dropdown-item"
+		th:href="@{/products}">Clean Search</a>
+
+
+
 	<section style="padding: 30px;">
 
 		<p style="color: #342c66; font-size: 30pt; font-weight: bold;">All
@@ -33,7 +78,7 @@
 		<div class="row row-cols-1 row-cols-md-5 g-6">
 			<div class="col" th:each="product : ${products}">
 				<div class="card">
-					<img src="images/productphar.png" class="card-img-top" alt="...">
+					<img src="images/medicamento.svg" class="card-img-top" alt="...">
 					<div class="card-body">
 
 
@@ -54,14 +99,11 @@
 						</p>
 
 
-						<a th:href="@{'/products/' + ${product.id}}"
-							class="btn btn-info"><i class="fas fa-eye"></i></a>
-										
-							 <br></br> 
-							<a
-							th:href="@{/shoppingCart}" class="btn btn-success">Add to
-							Cart</a>
-
+						<a th:href="@{'/products/' + ${product.id}}" class="btn btn-info"><i
+							class="fas fa-eye"></i></a> <br></br> <a
+							th:href="@{'/products/' + ${product.id} + '/shop'}"
+							class="btn btn-warning"><i class="fas fa-edit"></i> Buy this
+							Product</a>
 
 
 

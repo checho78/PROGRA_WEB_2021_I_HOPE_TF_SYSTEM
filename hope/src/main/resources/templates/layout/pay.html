@@ -15,10 +15,16 @@
 		<nav aria-label="breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a th:href="@{/home}">Home</a></li>
-				<li class="breadcrumb-item"><a th:href="@{/allProducts}">Products</a></li>
-				<li class="breadcrumb-item"><a th:href="@{/shoppingCart}">My
-						Cart</a></li>
-				<li class="breadcrumb-item active" aria-current="page">Pay</li>
+				<li class="breadcrumb-item"><a th:href="@{/allProducts}">All
+						Products</a></li>
+				
+				
+			
+
+				<li class="breadcrumb-item active" aria-current="page">Buying</li>
+
+
+
 			</ol>
 		</nav>
 	</section>
@@ -49,8 +55,7 @@
 
 				</form>
 			</div>
-			<a th:href="@{/reservation}" class="btn btn-success">Pay</a>
-			 <a
+			<a th:href="@{/reservation}" class="btn btn-success">Pay</a> <a
 				th:href="@{/shoppingCart}" class="btn btn-danger"><i
 				class="fas fa-plus-square"></i> Cancel</a>
 
@@ -62,9 +67,9 @@
 			<p style="color: #342c66; font-size: 16pt;">Register it</p>
 
 			<div class="d-grid gap-2 d-md-flex justify-content-md-end ">
-				
-	<a th:href="@{'/cards/new'}" class="btn btn-primary"><i
-				class="fas fa-plus-square"></i>Add Card</a>
+
+				<a th:href="@{'/cards/new'}" class="btn btn-primary"><i
+					class="fas fa-plus-square"></i>Add Card</a>
 			</div>
 		</div>
 

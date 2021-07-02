@@ -12,5 +12,12 @@ import pe.edu.upc.hope.model.entity.Reservation;
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Integer>{
 
+	
+
+	 List<Product> findByName(String name);
+	    List<Product> findByPrice(Double price);
+	    List<Product> findByDescription(String description);
+
+	    
 	//List<Product> findByReservation(Reservation reservation);
 }
