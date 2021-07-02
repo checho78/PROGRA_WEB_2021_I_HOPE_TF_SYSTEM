@@ -31,6 +31,23 @@ public class CustomerDetails implements UserDetails {
 	public String getUsername() {
 		return customer.getEmail();
 	}
+	
+	
+	public Integer getId() {
+		return customer.getId();
+	}
+	
+	
+	public String getCellphone() {
+		return customer.getCellphone();
+	}
+
+	public String getDni() {
+		return customer.getDni();
+	}
+
+	
+	
 
 	@Override
 	public boolean isAccountNonExpired() {

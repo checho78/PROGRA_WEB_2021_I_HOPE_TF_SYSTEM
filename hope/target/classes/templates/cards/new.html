@@ -5,12 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+<link th:href="@{/css/fontawesome.min.css}" rel="stylesheet">
+<link th:href="@{/css/solid.min.css}" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
 
 <title>Card Register</title>
 </head>
 <body>
 
 	<header th:replace="layout/layout :: header"></header>
+	
+<section style="padding: 30px;">
 
 	<h1 style="max-width: 700px; margin-left: 100px;">New Card</h1>
 	<div class="card text-dark bg-light card border-info mb-3"
@@ -60,7 +66,7 @@
 							</div>
 
 
-
+<button type="submit" class="btn btn-success">Save</button>
 
 						</form>
 					</div>
@@ -68,10 +74,11 @@
 				</div>
 			</div>
 		</div>
-		<button type="submit" class="btn btn-success">Save</button>
-		<br> <a th:href="@{'/cards'}" class="btn btn-primary"><i
-			class="fas fa-plus-square"></i> Return</a>
+
+		<br> <a th:href="@{'/cards'}" class="btn btn-primary"><i class="fas fa-plus-square"></i> Return</a>
 	</div>
+	
+	</section>
 	<footer th:replace="layout/layout :: footer_hope"></footer>
 
 	<script th:src="@{js/bootstrap.bundle.min.js}"></script>

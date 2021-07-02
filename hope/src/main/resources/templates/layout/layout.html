@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 
 <head th:fragment="head(title)">
 <meta charset="utf-8">
@@ -24,6 +24,8 @@
 	<div th:fragment="header">
 		<!-- this is header -->
 		<header th:fragment="header">
+
+
 
 
 
@@ -159,7 +161,7 @@
 								class="nav-link dropdown-toggle" href="#"
 								id="navbarScrollingDropdown" role="button"
 								data-bs-toggle="dropdown" aria-expanded="false"> <i
-									class="fas fa-user-circle"></i> Profile
+									class="fas fa-user-circle"></i> <span sec:authentication="principal.fullName"></span>
 							</a>
 								<ul class="dropdown-menu"
 									aria-labelledby="navbarScrollingDropdown">
