@@ -24,7 +24,7 @@
 		</nav>
 	</section>
 
-
+<section style="padding: 30px;">
 
 	<table>
 		<tr>
@@ -71,7 +71,7 @@
 
 
 
-	<section style="padding: 30px;">
+	
 
 		<p style="color: #342c66; font-size: 30pt; font-weight: bold;">All
 			Products</p>
@@ -86,10 +86,8 @@
 
 						<p class="card-text">
 						<h2>
-
 							<strong><span th:text="${product.name}"></span></strong>
-						</h2>
-						</p>
+						</h2> </p>
 
 						<p class="card-text">
 							<strong>Stock: </strong> <span th:text="${product.stock}"></span>
@@ -100,8 +98,7 @@
 						</p>
 
 
-						<a th:href="@{'/products/' + ${product.id}}" class="btn btn-info"><i
-							class="fas fa-eye"></i></a> <br></br> <a
+						<a th:href="@{'/products/' + ${product.id}}" class="btn btn-info">View details</a> <br></br> <a
 							th:href="@{'/products/' + ${product.id} + '/shop'}"
 							class="btn btn-warning"><i class="fas fa-edit"></i> Buy this
 							Product</a>

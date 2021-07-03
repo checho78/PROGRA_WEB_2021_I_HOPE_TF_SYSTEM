@@ -8,9 +8,9 @@
 
 <link th:href="@{/css/fontawesome.min.css}" rel="stylesheet">
 <link th:href="@{/css/solid.min.css}" rel="stylesheet">
- <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
-
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
 <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+
 
  
 <title>My Profile</title>
@@ -22,23 +22,25 @@
 <section style="padding: 30px;">
 
 <div class="card text-center">
-  <div class="card-header card header-dark bg-info">
+  <div class="card-header card-header-white bg-secondary ">
     -
   </div>
-  <div class="card-body   ">
+  <div class="card-body">
     <h1 class="card-title">My Profile</h1>
-    <img src="..." class="card-img-top" alt="...">
-    <p class="card-text">Name: <span sec:authentication="principal.fullName"></span></p>
-    <p class="card-text">Cellphone: <span sec:authentication="principal.cellphone"></span></p>
-    <p class="card-text">Dni: <span sec:authentication="principal.dni"></span></p>
-    <p class="card-text">Email: <span sec:authentication="principal.username"></span></p>
+    <h1 class="card-title"> <i class="fas fa-user-circle"></i></h1>
+
+    <p class="card-text"><Strong>Name: </Strong> <span sec:authentication="principal.fullName"></span></p>
+    <p class="card-text"><Strong>Cellphone: </Strong> <span sec:authentication="principal.cellphone"></span></p>
+    <p class="card-text"><Strong>DNI: </Strong> <span sec:authentication="principal.dni"></span></p>
+    <p class="card-text"><Strong>Email: </Strong><span sec:authentication="principal.username"></span></p>
 
 
     
 	<a th:href="@{'/home'}" class="btn btn-primary"><i
 		class="fas fa-plus-square"></i> Return</a>
   </div>
-  <div class="card-footer card footer-dark bg-info text-muted">
+  
+  <div class="card-footer card-footer-white bg-secondary">
     -
   </div>
 </div>
