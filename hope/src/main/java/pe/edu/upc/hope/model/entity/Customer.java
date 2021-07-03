@@ -5,7 +5,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -51,7 +51,7 @@ public class Customer {
 
 
 
-	/* @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
 	@OnDelete(action = OnDeleteAction.CASCADE)
 	private List<Card> cards;
 	
@@ -72,7 +72,7 @@ public class Customer {
 	public void setCards(List<Card> cards) {
 		this.cards = cards;
 	}
-*/
+
 
 	public Integer getId() {
 		return id;

@@ -4,14 +4,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+<link th:href="@{/css/fontawesome.min.css}" rel="stylesheet">
+<link th:href="@{/css/solid.min.css}" rel="stylesheet">
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
 
     <title>New Pharmacy item</title>
   </head>
   <body>
+  <header th:replace="layout/layout :: header"></header>
+  <section style="padding: 30px;">
     <h1>New Pharmacy Item</h1>
 	
-	<div class="card" style="width: 20rem;">
+	<div class="card" style="width: 30rem;">
 	  <div class="card-body">
 	    
 	    <form th:action="@{/pharmacies/savenew}" th:object="${pharmacyNew}" method="post">
@@ -76,7 +82,8 @@
 	</div>
 		
 	<a th:href="@{'/pharmacies'}" class="btn btn-primary"><i class="fas fa-plus-square"></i> Return</a>
-
+</section>
+	<footer th:replace="layout/layout :: footer_hope"></footer>
     <script th:src="@{js/bootstrap.bundle.min.js}" ></script>
   </body>
 </html>

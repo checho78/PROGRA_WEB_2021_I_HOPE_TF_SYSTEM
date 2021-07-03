@@ -1,10 +1,12 @@
 package pe.edu.upc.hope.security;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import pe.edu.upc.hope.model.entity.Card;
 import pe.edu.upc.hope.model.entity.Customer;
 
 public class CustomerDetails implements UserDetails {
@@ -46,7 +48,9 @@ public class CustomerDetails implements UserDetails {
 		return customer.getDni();
 	}
 
-	
+	public List<Card> getCards() {
+		return customer.getCards();
+	}
 	
 
 	@Override
