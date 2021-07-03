@@ -16,33 +16,56 @@
 	<header th:replace="layout/layout :: header"></header>
 
 <section style="padding: 30px;"> 
-    <h1>My Reservations</h1>
-	
-	<div class="card" style="width: 20rem;">
-	  <div class="card-body">
-	    
-	    <form method="post">
-		  
-		  <div class="mb-3">
-		  	<label for="name" class="form-label">Price:			S/18.50</label>
-		  	<br>
-		    <label for="name" class="form-label">Comission:			S/1.85</label>
-		    <br>
-		    <label for="name" class="form-label">Description:		Aspirina, Jarabe de la tos, Shampoo</label>
-		    <br>
-		    <label for="name" class="form-label">Start date: 			17/06/2021</label>
-		    <br>
-		    <label for="name" class="form-label">End date:				19/06/2021</label>		     
-		  </div>
-		    <a th:href="@{/myReservations}" class="btn btn-success">Save</a>
-		</form>
-	  </div>
-	</div>
-		
-	<a class="btn btn-primary"><i  th:href="@{/pay}" class="fas fa-plus-square"></i> Cancel</a>
+   <h1>Reservation List</h1>
 
-	</section>	
-	
+	<div class="card text-center" style="width: 60rem;">
+		<div class="card-header">Reservation management</div>
+		<div class="card-body">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col" style="width: 25rem;">Description</th>
+						<th scope="col" style="width: 25rem;">Price</th>
+						<th scope="col" style="width: 25rem;">Commission</th>
+						<th scope="col" style="width: 25rem;">StartDate</th>
+						<th scope="col" style="width: 25rem;">EndDate</th>
+						<th scope="col" style="width: 25rem;">Card Usada</th>
+						<th scope="col"></th>
+						<th scope="col"></th>
+						<th scope="col"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="reservation : ${reservations}">
+						<th scope="row" th:text="${reservation.id}"></th>
+						<td th:text="${reservation.description}"></td>
+						<td th:text="${reservation.price}"></td>
+						<td th:text="${reservation.commission}"></td>
+						<td th:text="${reservation.startDate}"></td>					
+						<td th:text="${reservation.endDate}"></td>
+						<td th:text="${reservation.card.id}"></td>
+						
+						
+						<td><a th:href="@{'/reservations/' + ${reservation.id}}"
+							class="btn btn-info"><i class="fas fa-eye"></i></a></td>
+						<td><a
+							th:href="@{'/reservations/' + ${reservation.id} + '/edit'}"
+							class="btn btn-warning"><i class="fas fa-edit"></i></a></td>
+						<td><a
+							th:href="@{'/reservations/' + ${reservation.id} + '/del'}"
+							class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+		<div class="card-footer text-muted">
+			<a th:href="@{'/reservations/new'}" class="btn btn-primary"><i
+				class="fas fa-plus-square"></i> New Reservation</a>
+		</div>
+	</div>
+</section>
 	
 	<footer th:replace="layout/layout :: footer_hope"></footer>
 
