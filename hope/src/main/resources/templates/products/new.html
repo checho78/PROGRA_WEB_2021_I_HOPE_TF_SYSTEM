@@ -5,15 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/css/fontawesome.min.css}" rel="stylesheet">
+<link th:href="@{/css/solid.min.css}" rel="stylesheet">
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
 
 <title>New Product item</title>
 </head>
 <body>
-	<h1>New Product Item</h1>
+    <header th:replace="layout/layout :: header"></header>
+  <section style="padding: 30px;">
 
 	<div class="card" style="width: 20rem;">
-		<div class="card-body">
 
+		<div class="card-body">
+	<h1>New Product Item</h1>
 			<form th:action="@{/products/savenew}" th:object="${productNew}"
 				method="post">
 
@@ -82,10 +87,6 @@
 					</div>
 				</div>
 
-
-
-
-
 				<button type="submit" class="btn btn-success">Save</button>
 			</form>
 		</div>
@@ -93,7 +94,8 @@
 
 	<a th:href="@{'/products'}" class="btn btn-primary"><i
 		class="fas fa-plus-square"></i> Return</a>
-
+		</section>
+	<footer th:replace="layout/layout :: footer_hope"></footer>
 	<script th:src="@{js/bootstrap.bundle.min.js}"></script>
 </body>
 </html>

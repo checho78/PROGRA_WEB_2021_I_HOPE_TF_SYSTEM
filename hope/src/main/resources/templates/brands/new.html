@@ -16,10 +16,12 @@
   
   <header th:replace="layout/layout :: header"></header>
   	<section style="padding: 30px;">
-    <h1>New Brand Item</h1>
+    <h1>-</h1>
 	
 	<div class="card" style="width: 20rem;">
 	  <div class="card-body">
+	    
+	    <h1>New Brand Item</h1>
 	    
 	    <form th:action="@{/brands/savenew}" th:object="${brandNew}" method="post">
 		 

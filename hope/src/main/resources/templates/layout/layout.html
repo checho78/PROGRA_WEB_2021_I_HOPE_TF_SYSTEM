@@ -54,20 +54,7 @@
 
 
 
-							<li class="nav-item dropdown bg-info"><a
-								style="color: #4f4399; font-weight: bold;"
-								class="nav-link dropdown-toggle" href="#"
-								id="navbarScrollingDropdown" role="button"
-								data-bs-toggle="dropdown" aria-expanded="false"> Filters </a>
-								<ul class="dropdown-menu"
-									aria-labelledby="navbarScrollingDropdown">
-									<li><a th:href="@{/search/district}"
-										style="color: #4f4399; font-weight: bold;"
-										class="dropdown-item" href="#">District</a></li>
-									<li><a style="color: #4f4399; font-weight: bold;"
-										class="dropdown-item" href="#">Product</a></li>
 
-								</ul></li>
 
 
 							<li class="nav-item"><a
@@ -106,7 +93,7 @@
 									aria-labelledby="navbarScrollingDropdown">
 
 									<li><a style="color: #4f4399; font-weight: bold;"
-										class="dropdown-item" th:href="@{/pharmacies/new}">Pharmacy</a></li>
+										class="dropdown-item" th:href="@{/pharmacies}">Pharmacy</a></li>
 
 									<li><a style="color: #4f4399; font-weight: bold;"
 										class="dropdown-item" th:href="@{/categories}">Category</a></li>
@@ -126,9 +113,7 @@
 									<li><a style="color: #4f4399; font-weight: bold;"
 										class="dropdown-item" th:href="@{/reservations}">Reservation</a></li>
 
-									<li><a style="color: #4f4399; font-weight: bold;"
-										class="dropdown-item" th:href="@{/reservationDetails}">Reservation
-											Detail</a></li>
+									
 
 
 								</ul></li>
@@ -184,8 +169,14 @@
 								data-bs-toggle="dropdown" aria-expanded="false"> Ph-Opt</a>
 								<ul class="dropdown-menu"
 									aria-labelledby="navbarScrollingDropdown">
+									
+									<li><a style="color: #4f4399; font-weight: bold;"
+										class="dropdown-item" th:href="@{'/pharmacies/new'}">Add Pharmacy</a></li>
+									
 									<li><a style="color: #4f4399; font-weight: bold;"
 										class="dropdown-item" th:href="@{'/brands/new'}">Add Brand</a></li>
+												
+										
 									<li><a style="color: #4f4399; font-weight: bold;"
 										class="dropdown-item" th:href="@{'/categories/new'}">Add
 											Category</a></li>
