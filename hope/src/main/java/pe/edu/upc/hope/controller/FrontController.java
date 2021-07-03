@@ -68,5 +68,10 @@ public class FrontController {
 		return "login";
 	}
 	
+	@GetMapping("profileView")
+	public String profileView() {
+		return "profileView";
+	}
+	
 
 }
