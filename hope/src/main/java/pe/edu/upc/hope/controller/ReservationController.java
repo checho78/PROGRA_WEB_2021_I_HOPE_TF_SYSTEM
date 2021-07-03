@@ -17,11 +17,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import pe.edu.upc.hope.model.entity.Reservation;
-import pe.edu.upc.hope.model.entity.Tarjeta;
+
 import pe.edu.upc.hope.service.ReservationService;
 
 import pe.edu.upc.hope.model.entity.Card;
-import pe.edu.upc.hope.model.entity.Cliente;
+
 import pe.edu.upc.hope.service.CardService;
 
 
